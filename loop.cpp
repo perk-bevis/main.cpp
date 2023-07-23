@@ -41,7 +41,12 @@ code:
 
 Bài 4. Nhập vào 1 số nguyên n(n > 0). Tính tổng các " chữ số lẻ " của số nguyên dương n.
 code
-
+#include <iostream>
+using namespace std;
+int main() {
+    int n; cin>>n;
+    
+}
 Bài 5.
 - Nhà bạn A có n đôi vớ, mỗi ngày bạn A mang 1 đôi, mang xong thì vứt bỏ
 - Cứ m ngày thì mẹ bạn A mua thêm cho A một đôi vớ mới.
@@ -82,5 +87,32 @@ int main() {
 }
 
 6.(BT tư duy) Hoán vị 2 biến bằng 2 cách
+
 cách 1: dùng biến trung gian
+#include <iostream>
+using namespace std;
+int main() {
+    int a =3;
+    int b =7;
+	int tam = a;
+	a = b;
+	b = tam;
+	cout << a << endl;
+	cout << b << endl;
+    return 0;
+}
+
 cách 2: không dùng biến trung gian
+
+#include <iostream>
+using namespace std;
+int main() {
+    int a =3;
+    int b =7;
+	a = a+b; 
+	b = a-b;
+	a = a-b; 
+	cout << a << endl;
+	cout << b << endl;
+    return 0;
+}
