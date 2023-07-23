@@ -16,8 +16,32 @@ input: 6
 output: 42
 
 Bài 2. Nhập vào 1 số nguyên dương n , điều kiện 0 < n < 20. Tính giai thừa của số nguyên dương n.
+	
 code:
-  
+#include <iostream>
+using namespace std;
+int main() {
+    int n; cin>>n;
+    int factorial = 1;
+    for(int i = 1;i <= n;i++){
+      factorial *= i;
+    }
+    cout << factorial << endl;
+    return 0;
+}
+
+Bài 3. Nhập vào số nguyên dương n(n > 0). Viết chương trình tách các chữ số của số nguyên dương n ?
+VD: n = 1675
+==> gồm các chữ số
+5  
+7  
+6  
+1
+code:
+
+Bài 4. Nhập vào 1 số nguyên n(n > 0). Tính tổng các " chữ số lẻ " của số nguyên dương n.
+code
+
 Bài 5.
 - Nhà bạn A có n đôi vớ, mỗi ngày bạn A mang 1 đôi, mang xong thì vứt bỏ
 - Cứ m ngày thì mẹ bạn A mua thêm cho A một đôi vớ mới.
