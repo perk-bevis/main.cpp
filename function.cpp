@@ -1,4 +1,17 @@
 1. Nhận n số nguyên dương từ bàn phím. Xuất ra màn hình kết quả nhỏ nhất(không sử dụng mảng).
+  
+code:
+#include <iostream>
+using namespace std;
+int main() {
+    int n; cin>>n;
+    int sum = 0;
+    for(int i = 2;i <= 2*n;i+=2){
+      sum+=i;
+    }
+    cout << sum << endl;
+    return 0;
+}
 2.(tư duy)
 Tìm tất cả các phương án kết hợp 3 loại giấy bạc 100đ, 200đ, 500đ với nhau để cho ra số tiền 10000đ.
 
@@ -14,6 +27,23 @@ Phương án 537: 98 tờ 100đ,  1 tờ 200đ,  0 tờ 500đ
   ***
  *****
 *******
+
+code:
+#include <iostream>
+using namespace std;
+int main() {
+    int n = 4;
+	for(int i = 0;i < n;i++){
+		 for(int j = 0;j<n-i-1;j++){
+			   cout << " "; 
+		 } 
+		 for(int k = 0; k<2*i+1;k++){
+			   cout << "*"; 
+		 } 
+		  cout << endl; 
+	} 
+    return 0;
+}
 //---------- nâng cao -------------
 4. Viết CT nhập vào ngày tháng năm. In ra màn hình ngày trước, và sau.
 VD: nhập: 1/3/2019
