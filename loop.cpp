@@ -45,7 +45,9 @@ code
 using namespace std;
 int main() {
     int n; cin>>n;
-    
+    if(){
+	    
+    }
 }
 Bài 5.
 - Nhà bạn A có n đôi vớ, mỗi ngày bạn A mang 1 đôi, mang xong thì vứt bỏ
@@ -85,6 +87,66 @@ int main() {
 	cout << "so ngay mang het vo la:" << dem_ngay << endl;
 	return 0;
 }
+cách 2:
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n, m;
+	cout << "nhap n: "; cin >> n;
+	cout << "nhap m: "; cin >> m;
+
+	int dem_ngay = 0;
+	while (n != 0) {
+		//1 ngày
+		dem_ngay++;
+		n--;
+		if (dem_ngay % m == 0) {
+			n++;
+		}
+	}
+	cout << "so ngay mang het vo la:" << dem_ngay << endl;
+	return 0;
+}
+cách 3:
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n, m;
+	cout << "nhap n: "; cin >> n;
+	cout << "nhap m: "; cin >> m;
+
+	int dem_ngay = 0;
+	while (n >= m) {
+		dem_ngay+=m;
+		n-=m;
+		n++;
+	}
+	dem_ngay +=n; 
+	cout << "so ngay mang het vo la:" << dem_ngay << endl;
+	return 0;
+}
+cách 4:
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n, m;
+	cout << "nhap n: "; cin >> n;
+	cout << "nhap m: "; cin >> m;
+	int gio =n; 
+	while (n % m != 0) {
+		int ps = n/m;
+		int du = n%m;
+		
+		gio = gio + ps;
+		n = ps + du; 
+	}
+	cout << "so ngay mang het vo la:" << dem_ngay << endl;
+	return 0;
+}
+
 
 6.(BT tư duy) Hoán vị 2 biến bằng 2 cách
 
