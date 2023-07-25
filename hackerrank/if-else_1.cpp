@@ -18,4 +18,15 @@ Sample Input 0
 Sample Output 0
 
 23
+  
 code:
+  
+#include <iostream>
+using namespace std;
+
+int main(){
+	int x; cin >> x;
+	int sum = x*x*x + 3*x*x + x+1;
+	cout << sum << endl;
+	return 0;  
+} 
