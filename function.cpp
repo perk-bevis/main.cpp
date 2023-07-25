@@ -52,9 +52,45 @@ VD: Nhập: 255000        Xuất: hai trăm năm mươi năm nghìn Việt Nam �
 // Bài này được ứng dụng trong các đồ án quản lý vật tư
 
 6. Viết chương trình in ra bảng cửu chương (không cần trình bày đẹp)
-
+==============================================================================================================================
 7. Viết ct Tính UCLN, BCNN 2 số nguyên a,b
 8. viết ct nhập n số nguyên, tìm số lớn nhất, nhỏ nhất.// ko sử dụng mảng
 9. Viết hàm nhập vào điểm -> xuất ra học lực của học sinh. // 9,10 giỏi, 78 khá, 456 tb, 0123 yếu
 10. Viết ct hoán vị 2 số nguyên a,b
 11. Viết hàm nhập vào tuổi -> xuất ra năm sinh
+code: 
+câu 7:
+#include <iostream>
+using namespace std;
+
+int main(){
+	//liet ke cac uoc cua a : int a=8;
+	int a=8;// 8 7 6 5 4 3 2 1 => a%i == 0  
+	int b=6;// 6 5 4 3 2 1 => b%i == 0
+	int min = (a<b) ? a : b;
+	for(int i = min;i>0;i--){
+		if(a%i == 0 && b% i == 0){
+			cout << i << endl; 
+			break; 
+		} 
+	} 
+} 
+hoàn chỉnh:
+#include <iostream>
+using namespace std;
+
+int ucln(int a,int b){
+	int min = (a<b) ? a : b;
+	for(int i = min;i>0;i--){
+		if(a%i == 0 && b% i == 0){
+			return i; 
+		} 
+	} 
+} 
+int main(){
+	//liet ke cac uoc cua a : int a=8;
+	int a=8;// 8 7 6 5 4 3 2 1 => a%i == 0  
+	int b=6;// 6 5 4 3 2 1 => b%i == 0
+	cout << ucln(a,b) << endl;
+	return 0; 
+} 
