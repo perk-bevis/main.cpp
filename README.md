@@ -18,3 +18,7 @@ web2: https://codeforces.com/
 web3: https://laptrinh.fit.hcmute.edu.vn/
 
 web4: http://csloj.ddns.net/
+
+web5: https://usaco.guide/silver/prefix-sums?lang=cpp
+
+web6: https://judge.yosupo.jp/problem/static_range_sum
