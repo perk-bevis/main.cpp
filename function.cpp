@@ -75,7 +75,7 @@ int main(){
 		} 
 	} 
 } 
-hoàn chỉnh:
+hoàn chỉnh: UCLN(a,b)
 #include <iostream>
 using namespace std;
 
@@ -92,5 +92,29 @@ int main(){
 	int a=8;// 8 7 6 5 4 3 2 1 => a%i == 0  
 	int b=6;// 6 5 4 3 2 1 => b%i == 0
 	cout << ucln(a,b) << endl;
+	return 0; 
+} 
+hoàn chỉnh BCNN:
+#include <iostream>
+using namespace std;
+int bcnn(int a, int b){
+	int max = (a>b) ?a:b;
+c1:	
+	while(true) {
+		if(max %a == 0 && max %b == 0){
+			return max; 
+		} 
+	    max++;	
+	}
+	c2:
+        while(max %a != 0 || max %b != 0){
+    	     max++; 
+	} 
+	return max; 
+} 
+
+int main(){
+	int a ,b ; cin >> a >> b; 
+	cout << bcnn(a , b)<< endl; 
 	return 0; 
 } 
