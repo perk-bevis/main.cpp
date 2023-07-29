@@ -1,4 +1,4 @@
-1. Nhận n số nguyên dương từ bàn phím. Xuất ra màn hình kết quả nhỏ nhất(không sử dụng mảng).
+🔴1. Nhận n số nguyên dương từ bàn phím. Xuất ra màn hình kết quả nhỏ nhất(không sử dụng mảng).
   
 code:
 #include <iostream>
@@ -59,7 +59,7 @@ VD: Nhập: 255000        Xuất: hai trăm năm mươi năm nghìn Việt Nam �
 10. Viết ct hoán vị 2 số nguyên a,b
 11. Viết hàm nhập vào tuổi -> xuất ra năm sinh
 code: 
-câu 7:
+🔴câu 7:
 #include <iostream>
 using namespace std;
 
@@ -94,7 +94,7 @@ int main(){
 	cout << ucln(a,b) << endl;
 	return 0; 
 } 
-hoàn chỉnh BCNN:
+🔴 hoàn chỉnh BCNN:
 #include <iostream>
 using namespace std;
 int bcnn(int a, int b){
@@ -116,5 +116,31 @@ c1:
 int main(){
 	int a ,b ; cin >> a >> b; 
 	cout << bcnn(a , b)<< endl; 
+	return 0; 
+} 
+🔴 GIẢI THUẬT EUCLID <UCLN - BCNN>
+#include <iostream>
+using namespace std;
+
+int ucln(int a,int b){
+	while(a != b){
+		if(a >b){
+			a = a-b; 
+		} 
+		else if(b > a){
+			b = b -a; 
+		} 
+	}
+	return a; 
+} 
+
+int bcnn(int a, int b){
+	return (a*b) / ucln(a , b); 
+} 
+
+int main(){
+	int a,b ; cin >> a,b;
+	cout << ucln(a,b) << endl;
+	cout << bcnn(a,b) << endl;
 	return 0; 
 } 
