@@ -18,3 +18,14 @@ Sample Input 0
 Sample Output 0
 
 13
+
+code:
+#include <iostream>
+using namespace std;
+
+int main(){
+	int a,b,c; cin >> a>> b>> c;
+	int sum = a*(b+c)+b*(a+c);
+	cout << sum << endl; 
+	return 0; 
+} 
