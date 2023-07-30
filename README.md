@@ -22,3 +22,5 @@ web4: http://csloj.ddns.net/
 web5: https://usaco.guide/silver/prefix-sums?lang=cpp
 
 web6: https://judge.yosupo.jp/problem/static_range_sum
+
+web7: https://cses.fi/
