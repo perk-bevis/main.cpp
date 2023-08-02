@@ -1,3 +1,31 @@
+1. Viết chương trình nhập số nguyên dương x, xếp loại x là số gì (dương, âm, 0)
+Test1: 
+input: x = 5
+output: x la so duong
+
+Test2:
+input: x = 0
+output: x la so 0
+
+2. Viết chương trình nhập số nguyên dương có 1 chữ số, đọc số nguyên đấy.
+input: x = 7
+output: bay
+
+input: 15
+output: kho qua, nhap so de hon di!!!
+
+3. Viết chương trình giải Pt bậc 1: ax + b = 0
+4. viết chương trình giải phương trình bậc 2: ax2 + bx + c = 0
+5. Viết chương trình xếp loai học lực cho học sinh dựa vào điểm trung bình nhập từ bàn phím
+input: diem = 7.5
+ouput: Kha
+
+6. Viết chương trình nhập tháng hiện tại vào in ra số ngày trong tháng, biết tháng 2 năm nhuận có 29 ngày, năm không nhuận có 28 ngày. Cứ 4 năm sẽ có 1 năm nhuận(năm nhuận là năm chia hết cho 4)
+input: 12
+output: 31 ngay
+
+=========================================================================================================================
+
 Bài 1. Nhập vào 1 số nguyên n(n > 0). Tính tổng 2 + 4 + 6 +...+ (2*n)
 code:
 
