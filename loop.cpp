@@ -2,7 +2,21 @@
 Test1: 
 input: x = 5
 output: x la so duong
+code :
+#include <iostream>
+using namespace std;
 
+int main() {
+    int x; cin >> x;
+    if(x > 0){
+    	cout << "x la so duong\n"; 
+	} else if(x < 0){
+		cout << "x la so am\n"; 
+	} else {
+		cout << "x la so 0\n"; 
+	} 
+    return 0;
+}
 Test2:
 input: x = 0
 output: x la so 0
