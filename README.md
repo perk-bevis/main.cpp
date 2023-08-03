@@ -24,3 +24,7 @@ web5: https://usaco.guide/silver/prefix-sums?lang=cpp
 web6: https://judge.yosupo.jp/problem/static_range_sum
 
 web7: https://cses.fi/
+
+web8: https://vnoi.info/wiki/Home
+
+web9: http://laptrinhphothong.vn/Account/Register
