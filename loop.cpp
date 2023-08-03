@@ -47,14 +47,78 @@ int main()
 }
 3. Viết chương trình giải Pt bậc 1: ax + b = 0
 code:
+#include <iostream> 
+using namespace std;
+ 
+int main()
+{
+    int a,b;
+    cin >>a >> b;
+    if(a == 0) {
+        if (b == 0) {
+            cout << "Phuong trinh vo so nghiem" << endl;
+        } else {
+            cout << "Phuong trinh vo nghiem" << endl;
+        }
+    } else {
+        double result = (double)-b/a;
+        cout << "Phuong trinh co nghiem la: " << result << endl;
+    }
+    return 0;
+}
 4. viết chương trình giải phương trình bậc 2: ax2 + bx + c = 0
+code:
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    double a, b, c, delta;
+    double x1, x2;
+
+    cout << "Nhap he so a, b, c cua phuong trinh: ";
+    cin >> a >> b >> c;
+
+    delta = b * b - 4 * a * c;
+
+    if (a == 0) {
+        if (b == 0) {
+            if (c == 0) {
+                cout << "INF" << endl;
+            } else {
+                cout << "NO" << endl;
+            }
+        } else {
+            x1 = -c / b;
+            cout << fixed << setprecision(2) << x1 << endl;
+        }
+    } else {
+        if (delta < 0) {
+            cout << "NO" << endl;
+        } else if (delta == 0) {
+            x1 = -b / (2 * a);
+            cout << fixed << setprecision(2) << x1 << endl;
+        } else {
+            x1 = (-b - sqrt(delta)) / (2 * a);
+            x2 = (-b + sqrt(delta)) / (2 * a);
+            cout << fixed << setprecision(2) << x1 << " " << x2 << endl;
+        }
+    }
+
+    return 0;
+}
 5. Viết chương trình xếp loai học lực cho học sinh dựa vào điểm trung bình nhập từ bàn phím
 input: diem = 7.5
 ouput: Kha
+code:
 
 6. Viết chương trình nhập tháng hiện tại vào in ra số ngày trong tháng, biết tháng 2 năm nhuận có 29 ngày, năm không nhuận có 28 ngày. Cứ 4 năm sẽ có 1 năm nhuận(năm nhuận là năm chia hết cho 4)
 input: 12
 output: 31 ngay
+code :
 
 =========================================================================================================================
 
