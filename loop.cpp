@@ -27,8 +27,26 @@ output: bay
 
 input: 15
 output: kho qua, nhap so de hon di!!!
+code: 
+#include<iostream>
+using namespace std;
 
+int main()
+{
+	int so;
+	cin >> number;
+	if (number == 7)
+	{
+		cout << "bay" << endl;
+	}
+	else if (number == 15)
+	{
+		cout << "kho qua, nhap so de hon di" << endl;
+	}
+	return 0;
+}
 3. Viết chương trình giải Pt bậc 1: ax + b = 0
+code:
 4. viết chương trình giải phương trình bậc 2: ax2 + bx + c = 0
 5. Viết chương trình xếp loai học lực cho học sinh dựa vào điểm trung bình nhập từ bàn phím
 input: diem = 7.5
