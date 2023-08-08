@@ -28,22 +28,44 @@ output: bay
 input: 15
 output: kho qua, nhap so de hon di!!!
 code: 
-#include<iostream>
+#include <iostream>
+#include <cmath>
 using namespace std;
-
-int main()
-{
-	int so;
-	cin >> number;
-	if (number == 7)
-	{
-		cout << "bay" << endl;
-	}
-	else if (number == 15)
-	{
-		cout << "kho qua, nhap so de hon di" << endl;
-	}
-	return 0;
+int main(){
+	int x; cin >> x;
+	switch(x){
+	    case 1:
+		    cout << "mot" << endl;
+		    break;  
+	    case 2:
+		    cout << "hai" << endl;
+		    break; 
+	    case 3: 
+		    cout << "ba" << endl;
+		    break; 
+	    case 4: 
+		    cout << "bon" << endl;
+		    break; 
+	    case 5: 
+		    cout << "nam" << endl;
+		    break; 
+		case 6: 
+		    cout << "sau" << endl;
+		    break; 
+		case 7: 
+		    cout << "bay" << endl;
+		    break; 
+		case 8: 
+		    cout << "tam" << endl;
+		    break; 
+		case 9: 
+		    cout << "chin" << endl;
+		    break; 
+		default:
+		    cout << "khong hop le" << endl;
+			break; 
+	    system("pause"); 
+    }
 }
 3. Viết chương trình giải Pt bậc 1: ax + b = 0
 code:
@@ -114,12 +136,54 @@ int main()
 input: diem = 7.5
 ouput: Kha
 code:
-
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main(){
+	float GPA; cin >> GPA;
+	if( GPA >= 8 && GPA <= 10){
+		cout << "gioi" << endl; 
+	} else if(GPA >= 6.5){
+		cout << "kha" << endl; 
+	} else if(GPA >= 5 ){
+		cout << "trung binh" << endl; 
+	} else{
+		cout << "yeu" << endl; 
+	} 
+}
 6. Viết chương trình nhập tháng hiện tại vào in ra số ngày trong tháng, biết tháng 2 năm nhuận có 29 ngày, năm không nhuận có 28 ngày. Cứ 4 năm sẽ có 1 năm nhuận(năm nhuận là năm chia hết cho 4)
 input: 12
 output: 31 ngay
 code :
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main(){
+	int month; cin >> month;
 
+	switch (month){
+	case 2:
+	{
+		int year; cin >> year;
+		if (nam % 4 == 0){
+			cout << 29 << endl;
+		} else if (nam % 4 != 0){
+			cout << 28 << endl;
+		}
+		break;
+	}
+	case 4: case 6: case 9: case 11:
+	{
+		cout << 30 << endl;
+		break;
+	}
+	default:
+	{
+		cout << 31 << endl;
+		break;
+	}
+}
+}
 =========================================================================================================================
 
 Bài 1. Nhập vào 1 số nguyên n(n > 0). Tính tổng 2 + 4 + 6 +...+ (2*n)
