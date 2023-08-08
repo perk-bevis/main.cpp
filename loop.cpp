@@ -218,6 +218,23 @@ int main() {
     return 0;
 }
 Bài 4. Nhập vào 1 số nguyên n(n > 0). Tính tổng các " chữ số lẻ " của số nguyên dương n.
+code:
+#include<conio.h>
+#include<iostream>
+#include <cmath> 
+int main(){
+	int n; 
+	cin >> n;
+	int gio = 0; 
+	while(n != 0){
+		int du = n % 10;// tách 
+		if(n % 2 != 0){
+		    gio = gio + du;	
+		}  
+		cout << du << endl; 
+	} 
+	cout <<  "s =" << gio << endl; 
+}
 Bài 3. Nhập vào số nguyên dương n(n > 0). Viết chương trình tách các chữ số của số nguyên dương n ?
 VD: n = 1675
 ==> gồm các chữ số
