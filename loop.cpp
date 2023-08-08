@@ -217,7 +217,7 @@ int main() {
     cout << factorial << endl;
     return 0;
 }
-
+Bài 4. Nhập vào 1 số nguyên n(n > 0). Tính tổng các " chữ số lẻ " của số nguyên dương n.
 Bài 3. Nhập vào số nguyên dương n(n > 0). Viết chương trình tách các chữ số của số nguyên dương n ?
 VD: n = 1675
 ==> gồm các chữ số
@@ -226,8 +226,24 @@ VD: n = 1675
 6  
 1
 code:
-
-Bài 4. Nhập vào 1 số nguyên n(n > 0). Tính tổng các " chữ số lẻ " của số nguyên dương n.
+#include<conio.h>
+#include<stdio.h>
+int main(){
+	int n; cin >> n;
+	//bd n = 0 
+	//kt n == 0 n!= 0; 
+	// n/ 10 
+	int gio = 0; 
+	while(n != 0){
+		int du = n % 10;// tách 
+		if(n % 2 != 0){
+		    gio = gio + du;	
+		}  
+		cout << du << endl; 
+		n= n/10; // du 
+	} 
+	cout <<  "s =" << gio << endl; 
+}
 code
 #include <iostream>
 using namespace std;
