@@ -1,3 +1,9 @@
+mảng :
+lv0: duyệt ,tìm kiếm ,liệt kê ,tổng ,tích ,đếm ,đặt lính canh ,đặt cờ hiệu;
+lv1: thêm ,xóa ,sắp xếp;
+lv2: gộp ,tách ,trộn;
+lv3: mảng con;
+=============================================================================
 1. Viết chương trình xuất ra các phần tử là số nguyên tố trong mảng
 2. Cho dãy số nguyên. Viết chương trình tìm giá trị lẻ cuối cùng trong mảng.
 3. Cho dãy số nguyên. Viết chương trình tìm đoạn [a, b] sao cho đoạn này chứa mọi giá trị trong mảng.
