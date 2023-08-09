@@ -262,3 +262,96 @@ void kt_mang_tang_dan(int a[], int n) {
 //Viết chương trình in ra các số siêu nguyên tố có trong mảng.
 
 ===================================================================================================================
+                             =================== mảng lv1 =====================
+🔴+thêm:      1    2    3    7    8
+            0    1    2    3    4
+	giá trị x tại vị trí x=9        => 	1    2    9    3    7    8
+                             vt=2               0    1    2    3    4    5
+   b1 dời
+	                a[5] = a[4];
+                        a[4] = a[3]
+			a[3] = a[2]
+                        a[2] = dừng
+   b2: chèn
+                        a[2] = 9;  
+   b3 tăng              n = n+1;
+   
+   b1 dời                                                        |               CODE		
+         for(int i =5;i>2;i--){                                  |       => for(int i =n;i>vt;i--){ 
+	     a[i] = a[i - 1];  pt hiện tại = pt đứng trước       |                 a[i] = a[i - 1];  pt hiện tại = pt đứng trước 
+	 }                                                       |          }
+  b2: chèn
+                        a[2] = 9;                                |        =>  a[vt] = x; 
+   b3 tăng              n = n+1;                                 |        =>  n = n++;
+⚫️+xóa
+           1    2         7    8
+           0    1    2    3    4 
+b1: dời 
+           a[2] = a[3];
+           a[3] = a[4];
+           a[4] = dừng;
+b2: giảm 
+           n--;
+===
+b1 dời
+      for(int i = 2; i< 4; i++){                            |       for(int i = vt; i< n-1; i++){ // áp cuối
+	  a[i] = a[i+1];   pt hện tại = phần tử kế tiếp     |            a[i] = a[i+1];   pt hện tại = phần tử kế tiếp
+      }                                                     |       }
+code:
+#include <iostream>
+#define Max 100
+using namespace std;
+
+void nhap(int a[], int n);
+void xuat(int a[], int n);
+void them(int a[], int& n, int vt, int x);
+void xoa(int a[], int& n, int vt);
+int main() {
+	int a[Max];
+	int n = 0;
+	do {
+		cout << "nhap n:"; cin >> n;
+	} while (n <=0 || n > Max);
+	nhap(a, n);
+	xuat(a, n);
+	//them(a, n, 2, 9);
+	xoa(a, n, 2);
+	xuat(a, n);
+	return 0;
+}
+void nhap(int a[], int n)
+{
+	cout << "=====Nhap=======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Nhap pt thu " << i << ": "; cin >> a[i];
+	}
+}
+void xuat(int a[], int n)
+{
+	cout << "======Xuat======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Pt thu " << i << " la: " << a[i] << endl;
+	}
+}
+//kĩ thuật thêm
+void them(int a[], int &n, int vt ,int x) {
+	//b1 dời 
+	for (int i = n; i > vt; i--) {
+		a[i] = a[i - 1];
+	}
+    //b2: chèn
+	a[vt] = x;
+	//b3 tăng  
+	n++;// có thay đổi
+}
+//kĩ thuật xóa
+void xoa(int a[], int &n, int vt) {
+	//b1 dời
+	for (int i = vt; i < n - 1; i++) {
+		a[i] = a[i + 1];
+	}
+	//b2 giảm
+	n--;
+}
