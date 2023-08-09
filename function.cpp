@@ -3,9 +3,34 @@ hàm có giá trị trả về => kdl hàm <=> kdl của giá trị trả về
 ----------
 hàm ko có giá trị trả về =>kdl hàm <=> void
 đi tính toán hoặc thực thi chức năng và ko muốn trả giá trị về cho thằng khác tái sử dụng
-tham trị ko có &
-tham chiếu có &;
+tham trị ko có & tạo bản sao cùng giá trị nhưng khác địa chỉ
+code:
+#include <iostream>
+using namespace std;
+void test(int a){
+     a=7;// a'=7
+}
 
+int main() {
+    int a =15;
+    test(a);
+    cout << a << endl;
+    return 0;
+} output: a = 15
+
+tham chiếu có &;
+#include <iostream>
+using namespace std;
+void test(int &a){
+     a=7;// a=7
+}
+
+int main() {
+    int a =15;
+    test(a);
+    cout << a << endl;
+    return 0;
+} output: a = 7
 
 🔴1. Nhận n số nguyên dương từ bàn phím. Xuất ra màn hình kết quả nhỏ nhất(không sử dụng mảng).
   
