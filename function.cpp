@@ -45,7 +45,66 @@ int main() {
 VD: nhập: 1/3/2019
         xuất:  Ngày trước: 28/2/2019       Ngày sau: 2/3/2019
 Lưu ý: kiểm tra năm nhuận để tính ngày tháng 2
+code
+	
+4.1 viết chương trình nhập vào ngày tháng năm tìm ngày sau:
+vd ngay 31
+   thang 12
+   nam 2023 => ngày sau 1/1/2024
+	giải thích
+30: 4,6,9,11 11,tháng +1
+31: 1,3,5,7,8,10 1,tháng +1;
+31 12 1/1/năm + 1;
+2 năm 28/29
+	
+code:
+#include<conio.h>
+#include<iostream>
+#include <cmath> 
+using namespace std; 
 
+int day_max(int month , int year){
+	switch(month){
+		case 2:{
+			if(year % 4 ==0 && year % 100 != 0 || year % 400 == 0){
+				return 29;
+			} else{
+				return 28; 
+			} 
+		} 
+		case 4: case 6: case 9: case 11:{
+			return 30; 
+		}  
+		default:{
+			return 31; 
+		} 
+	}  
+} 
+
+void later_date(int day,int month,int year)
+{
+	if(day == day_max(month , year))
+	{
+		if(month == 12)
+		{
+			cout <<  "later_date: 1/1/" << year + 1 << endl; 
+			return; 
+		} 
+		cout <<  "later_date: 1/" << month + 1<< "/" << year << endl;
+	}
+	else
+	{
+		cout <<  "later_date:" << day + 1  << "/" << month<< "/" << year << endl; 
+	} 
+} 
+
+int main(){
+	int day,month,year;
+	cout << "enter the date:";cin >> day;
+	cout << "enter month:";cin>> month;
+	cout << "enter the year:";cin >> year;
+	later_date(day,month,year);
+}
 5. Viết chương trình nhập giá tiền: từ 1k -> 900k
 Xuất ra cách đọc tương ứng
 VD: Nhập: 255000        Xuất: hai trăm năm mươi năm nghìn Việt Nam đồng
