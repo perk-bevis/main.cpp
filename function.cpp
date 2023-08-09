@@ -1,3 +1,12 @@
+hàm có giá trị trả về => kdl hàm <=> kdl của giá trị trả về
+đi tính toán và muốn có giá trị trả về cho thằng khác tái sử dụng
+----------
+hàm ko có giá trị trả về =>kdl hàm <=> void
+đi tính toán hoặc thực thi chức năng và ko muốn trả giá trị về cho thằng khác tái sử dụng
+tham trị ko có &
+tham chiếu có &;
+
+
 🔴1. Nhận n số nguyên dương từ bàn phím. Xuất ra màn hình kết quả nhỏ nhất(không sử dụng mảng).
   
 code:
