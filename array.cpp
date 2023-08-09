@@ -355,3 +355,21 @@ void xoa(int a[], int &n, int vt) {
 	//b2 giảm
 	n--;
 }
+============================================================================================
+	---------------------------------------------------------------------------
+	=========================================================================
+bài tập:
+Bài 1: Cho 1 dãy số nguyên. Viết chương trình xóa các phần tử là số đối xứng.
+Bài 2: Cho 1 dãy số nguyên. Viết chương trình thêm phần tử 0 vào trước các số hoàn thiện
+Bài 3. Cho mảng 1 chiều các số nguyên. Viết chương trình xóa các phần tử trùng nhau trong mảng, chỉ giữ lại duy nhất một phần tử phân biệt.
+VD: 1 4 2 2 1 5 4
+==> 1 4 2 5
+Bài 4. Cho mảng 1 chiều các số nguyên. Viết chương trình đếm số lần xuất hiện của từng phần tử trong mảng.
+VD: 
+1 3 5 2 3 1
+==>
+Phần tử	Số lần xuất hiện
+1 	2
+2	1	
+3	2	
+5 	1
