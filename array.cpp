@@ -360,6 +360,64 @@ void xoa(int a[], int &n, int vt) {
 	=========================================================================
 bài tập:
 Bài 1: Cho 1 dãy số nguyên. Viết chương trình xóa các phần tử là số đối xứng.
+demo:
+=====================liệt kê số âm để xóa => kĩ thuật liệt kê số âm và xóa================================
+
+#include <iostream>
+#define Max 100
+using namespace std;
+
+void nhap(int a[], int n);
+void xuat(int a[], int n);
+void xoa_pt_am(int a[], int &n);
+int main() {
+	int a[Max];
+	int n = 0;
+	do {
+		cout << "nhap n:"; cin >> n;
+	} while (n <=0 || n > Max);
+	nhap(a, n);
+	xuat(a, n);
+	xoa_pt_am(a, n);
+	xuat(a, n);
+	return 0;
+}
+void nhap(int a[], int n)
+{
+	cout << "=====Nhap=======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Nhap pt thu " << i << ": "; cin >> a[i];
+	}
+}
+void xuat(int a[], int n)
+{
+	cout << "======Xuat======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Pt thu " << i << " la: " << a[i] << endl;
+	}
+}
+
+//kĩ thuật xóa
+void xoa(int a[], int &n, int vt) {
+	//b1 dời
+	for (int i = vt; i < n - 1; i++) {
+		a[i] = a[i + 1];
+	}
+	//b2 giảm
+	n--;
+}
+//liệt kê số âm để xóa => kĩ thuật liệt kê số âm và xóa
+void xoa_pt_am(int a[], int &n) {
+	for (int i = 0; i < n; i++) {
+		if (a[i] < 0) { // liệt kê số âm
+			xoa(a, n,i);// có sự thay đổi
+			i--;// tránh sót pt
+		}
+	}
+}
+============================================================================================================	
 Bài 2: Cho 1 dãy số nguyên. Viết chương trình thêm phần tử 0 vào trước các số hoàn thiện
 Bài 3. Cho mảng 1 chiều các số nguyên. Viết chương trình xóa các phần tử trùng nhau trong mảng, chỉ giữ lại duy nhất một phần tử phân biệt.
 VD: 1 4 2 2 1 5 4
