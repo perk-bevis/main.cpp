@@ -399,3 +399,72 @@ int main() {
 	cout << b << endl;
     return 0;
 }
+=====================================================================
+🔴1. Nhận n số nguyên dương từ bàn phím. Xuất ra màn hình kết quả nhỏ nhất(không sử dụng mảng).
+  
+code:
+#include <iostream>
+using namespace std;
+int main() {
+    int n;
+    cout << " nhap so nguyen duong: " << endl;
+    cin >> n;
+    int min = 999999;
+    for (int i = 1; i <= n; i++) {
+        int x;
+        cout << "nhap gia tri thu " << i << ": ";
+        cin >> x;
+        if (x < min) {
+            min = x;
+        }
+    }
+    cout << "min" << min << endl;
+    return 0;
+}
+2.(tư duy)
+Tìm tất cả các phương án kết hợp 3 loại giấy bạc 100đ, 200đ, 500đ với nhau để cho ra số tiền 10000đ.
+
+Phương án    1: 0 tờ 100đ,  5 tờ 200đ, 18 tờ 500đ
+Phương án    2: 0 tờ 100đ, 10 tờ 200đ, 16 tờ 500đ
+…
+Phương án 537: 98 tờ 100đ,  1 tờ 200đ,  0 tờ 500đ
+code:
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int k = 0;
+        for (int i = 0; i <= 20  ; i++)
+            for (int j = 0; j <= 50; j++)
+                if (5*i + 2*j  <= 100)
+                {
+                    cout << i << " tờ 500, " << j << " tờ 200, "<< 100- 5*i - 2*j << " tờ 100.\n";
+                    k++;
+                }
+    return 0;
+}
+3. Viết ct in ra tam giác cân * theo hình:
+
+
+   *
+  ***
+ *****
+*******
+
+code:
+#include <iostream>
+using namespace std;
+int main() {
+    int n = 4;
+	for(int i = 0;i < n;i++){
+		 for(int j = 0;j<n-i-1;j++){
+			   cout << " "; 
+		 } 
+		 for(int k = 0; k<2*i+1;k++){
+			   cout << "*"; 
+		 } 
+		  cout << endl; 
+	} 
+    return 0;
+}
