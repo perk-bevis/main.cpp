@@ -417,8 +417,22 @@ void xoa_pt_am(int a[], int &n) {
 		}
 	}
 }
-============================================================================================================	
+
+
+
+
+=================================================================================	
 Bài 2: Cho 1 dãy số nguyên. Viết chương trình thêm phần tử 0 vào trước các số hoàn thiện
+
+void them_so_0_trc_pt_am(int a[], int& n) {
+	for (int i = 0; i < n; i++) {
+		if (a[i] < 0) { // liệt kê số âm
+			them(a, n, i, 0);
+			i++; //nhảy tránh lặp vô tận
+		}
+	}
+}
+================================================================
 Bài 3. Cho mảng 1 chiều các số nguyên. Viết chương trình xóa các phần tử trùng nhau trong mảng, chỉ giữ lại duy nhất một phần tử phân biệt.
 VD: 1 4 2 2 1 5 4
 ==> 1 4 2 5
