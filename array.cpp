@@ -445,3 +445,43 @@ Phần tử	Số lần xuất hiện
 2	1	
 3	2	
 5 	1
+===========================================================================================================================
+Ta có 2 mảng
+a: 1 2 3 4
+b: 5 6 7 
+1. Viết chương trình gộp mảng a vào đầu mảng b
+=> b: 1 2 3 4 5 6 7
+2. Viết chương trình gộp mảng a vào cuối mảng b
+=> b: 5 6 7 1 2 3 4
+
+3. có 2 mảng a, b đã được sắp xếp TĂNG DẦN. Trộng mảng a, b vào c sao cho mảng c tăng dần.
+VD: a: 1 2 7
+b: 0 2 6 9
+=> c: 0 1 2 2 6 7 9
+
+4. Cho 1 mảng các số nguyên a. Viết chương trình tách(thêm và xóa) các số âm ra mảng b và xóa khỏi a
+VD: mảng a:   1   -2   3   4   -6   0
+Xuất:
+mảng a:   1   3    4   0
+mảng b:  -2    -6
+
+5. (Tư duy + Xử lý) // Bài thi kết thúc học phần: Tin học cơ sở 2(PTIT HCM)
+Cho 1 mảng số nguyên. Sắp xếp các số âm nằm trước giảm dần tiếp đến là số 0 rồi đến các số dương giảm dần
+VD: mảng: 12pt:    -4     5      0      6      -1     0      8      3     -11    15    2    1  
+             Kết quả:     -1   -4    -11     0       0    15     8      6       5      3     2    1  
+Gợi ý: Sử dụng mảng phụ
+
+6. Cho mảng 1 chiều các số nguyên. Viết chương trình tìm phần tử lớn thứ k trong mảng
+VD: 2 15 3 -6 4     k = 2    =>  phần tử lớn thứ 2 là: 4
+
+7. Viết chương trình tìm UCLN của tất cả các phần tử trong mảng 1 chiều các số nguyên.
+
+8. Cho mảng 1 chiều các số nguyên. Hãy tìm giá trị trong mảng các số nguyên xa giá trị x nhất(x nhập từ bàn phím)
+VD: 24 45 23 13 43 -12
+x = 15
+==> giá trị trong mảng xa x nhất là: 45
+
+Bài 9. Cho mảng 1 chiều các số nguyên. Viết chương trình in ra các phần tử kề nhau mà cả hai đều chẵn.
+Bài 10. Cho mảng 1 chiều các số nguyên. Viết chương trình đảo ngược mảng. VD:  1 5 6 2  => 2 6 5 1
+Bài 11. Cho mảng 1 chiều các số nguyên. Hãy "dịch phải xoay vòng" k lần các phần tử trong mảng. VD: 1 5 6 2 3 , k = 2  => 2 3 1 5 6
+
