@@ -436,6 +436,135 @@ void them_so_0_trc_pt_am(int a[], int& n) {
 Bài 3. Cho mảng 1 chiều các số nguyên. Viết chương trình xóa các phần tử trùng nhau trong mảng, chỉ giữ lại duy nhất một phần tử phân biệt.
 VD: 1 4 2 2 1 5 4
 ==> 1 4 2 5
+=========================================================================
+code bài 1,2,3;
+#include <iostream>
+#include <map>
+#define Max 100
+using namespace std;
+void nhap(int a[], int n);
+void xuat(int a[], int n);
+void so_doi_xung(int a[], int &n);
+int tong_uoc(int x);
+bool kt_so_hoan_thien(int x);
+void them_so_0_trc_pt_am(int a[], int& n);
+void xoa_trung(int a[], int& n);
+int main() {
+	int a[Max];
+	int n = 0;
+	do {
+		cout << "nhap n:"; cin >> n;
+	} while (n <=0 || n > Max);
+	nhap(a, n);
+	xuat(a, n);
+	//so_doi_xung(a, n);
+	//them_so_0_trc_pt_am(a, n);
+	xoa_trung(a, n);
+	xuat(a, n);
+	return 0;
+}
+void nhap(int a[], int n)
+{
+	cout << "=====Nhap=======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Nhap pt thu " << i << ": "; cin >> a[i];
+	}
+}
+void xuat(int a[], int n)
+{
+	cout << "======Xuat======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Pt thu " << i << " la: " << a[i] << endl;
+	}
+}
+//kĩ thuật thêm
+void them(int a[], int& n, int vt, int x) {
+	//b1 dời 
+	for (int i = n; i > vt; i--) {
+		a[i] = a[i - 1];
+	}
+	//b2: chèn
+	a[vt] = x;
+	//b3 tăng  
+	n++;// có thay đổi
+}
+//kĩ thuật xóa
+void xoa(int a[], int &n, int vt) {
+	//b1 dời
+	for (int i = vt; i < n - 1; i++) {
+		a[i] = a[i + 1];
+	}
+	//b2 giảm
+	n--;
+}
+//Cho 1 dãy số nguyên. Viết chương trình xóa các phần tử là số đối xứng.
+int dao_so(int x) {
+	//x=123
+	int a = 0;
+	while (x != 0) {
+		int du = x % 10;// tách 
+		// tách để ghép 
+		a = a * 10 + du;
+
+		x = x / 10;// vứt
+	}
+	return a;
+}
+bool kt_so_doi_xung(int x) {
+	if (x <= 0) {
+		return false;
+	}
+	return (x == dao_so(x));
+}
+void so_doi_xung(int a[], int &n) {
+	for (int i = 0; i < n; i++) {
+		if(kt_so_doi_xung(a[i])==true) {             //(a[i] < 0) { // liệt kê số âm
+			xoa(a, n,i);// có sự thay đổi
+			i--;// tránh sót pt
+		}
+	}
+}
+//Cho 1 dãy số nguyên. Viết chương trình thêm phần tử 0 vào trước các số hoàn thiện
+int tong_uoc(int x) {
+	int sum = 0;
+	for (int i = 1; i <= x; i++) {
+		if (x % i == 0) {// liệt kê ước x
+			sum += i;
+		}
+	}
+	return sum;
+}
+bool kt_so_hoan_thien(int x) {
+	if (x <= 0) {
+		return false;
+	}
+	return (x == tong_uoc(x) - x);
+}
+void them_so_0_trc_pt_am(int a[], int& n) {
+	for (int i = 0; i < n; i++) {
+		if (kt_so_hoan_thien(a[i]) == true) {//(a[i] < 0) { // liệt kê số âm
+			them(a, n, i, 0);
+			i++; //nhảy tránh lặp vô tận
+		}
+	}
+}
+//Cho mảng 1 chiều các số nguyên. Viết chương trình xóa các phần tử trùng nhau trong mảng, chỉ giữ lại duy nhất một phần tử phân biệt.
+//VD: 1 4 2 2 1 5 4
+//==> 1 4 2 5
+void xoa_trung(int a[],int &n) {
+	for (int i = 0; i < n; i++) {
+		for (int j = i + 1; j < n; j++) {// quét tất cả phần tử còn lại của i
+			if (a[i] == a[j]) {// pt mẫu trùng pt đang xét
+				xoa(a, n, j);//xóa
+				j--;// tránh sót pt
+			}
+		}
+	}
+}
+===================================================================================================================
+	
 Bài 4. Cho mảng 1 chiều các số nguyên. Viết chương trình đếm số lần xuất hiện của từng phần tử trong mảng.
 VD: 
 1 3 5 2 3 1
