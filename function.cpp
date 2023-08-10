@@ -49,7 +49,22 @@ Phương án    1: 0 tờ 100đ,  5 tờ 200đ, 18 tờ 500đ
 Phương án    2: 0 tờ 100đ, 10 tờ 200đ, 16 tờ 500đ
 …
 Phương án 537: 98 tờ 100đ,  1 tờ 200đ,  0 tờ 500đ
+code:
+#include <iostream>
+#include <cmath>
+using namespace std;
 
+int main() {
+    int k = 0;
+        for (int i = 0; i <= 20  ; i++)
+            for (int j = 0; j <= 50; j++)
+                if (5*i + 2*j  <= 100)
+                {
+                    cout << i << " tờ 500, " << j << " tờ 200, "<< 100- 5*i - 2*j << " tờ 100.\n";
+                    k++;
+                }
+    return 0;
+}
 3. Viết ct in ra tam giác cân * theo hình:
 
 
