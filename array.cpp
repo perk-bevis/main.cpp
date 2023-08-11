@@ -574,6 +574,67 @@ Phần tử	Số lần xuất hiện
 2	1	
 3	2	
 5 	1
+code:
+#include <iostream>
+#include <math.h> 
+#define Max 100
+using namespace std;
+void nhap(int a[], int n);
+void xuat(int a[], int n);
+void solanxuathien(int a[], int n);
+
+int main() {
+	int a[Max];
+	int n = 0;
+	do {
+		cout << "nhap n:"; cin >> n;
+	} while (n <= 0 || n > Max);
+	nhap(a, n);
+	xuat(a, n);
+	//so_doi_xung(a, n);
+	//them_so_0_trc_pt_am(a, n);
+	//xoa_trung(a, n);
+	solanxuathien(a, n);
+	return 0;
+}
+void nhap(int a[], int n)
+{
+	cout << "=====Nhap=======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Nhap pt thu " << i << ": "; cin >> a[i];
+	}
+}
+void xuat(int a[], int n)
+{
+	cout << "======Xuat======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Pt thu " << i << " la: " << a[i] << endl;
+	}
+}
+void solanxuathien(int a[], int n) {
+	int count;
+	int check = 0;
+	for (int i = 0; i < n; i++) {
+		count = 0;
+		for (int j = 0; j < i; j++) {
+			if (a[j] == a[i]) {
+				check = 1;
+				break;
+			}
+		}
+		if (check != 1) {
+			for (int k = 0; k < n; k++) {
+				if (a[k] == a[i]) {
+					count++;
+				}
+			}
+			cout << a[i] << " " << count << endl;
+		}
+	}
+}
+
 ===========================================================================================================================
 Ta có 2 mảng
 a: 1 2 3 4
@@ -613,4 +674,3 @@ x = 15
 Bài 9. Cho mảng 1 chiều các số nguyên. Viết chương trình in ra các phần tử kề nhau mà cả hai đều chẵn.
 Bài 10. Cho mảng 1 chiều các số nguyên. Viết chương trình đảo ngược mảng. VD:  1 5 6 2  => 2 6 5 1
 Bài 11. Cho mảng 1 chiều các số nguyên. Hãy "dịch phải xoay vòng" k lần các phần tử trong mảng. VD: 1 5 6 2 3 , k = 2  => 2 3 1 5 6
-
