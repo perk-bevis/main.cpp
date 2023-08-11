@@ -674,7 +674,74 @@ b: 5 6 7
 => b: 1 2 3 4 5 6 7
 2. Viết chương trình gộp mảng a vào cuối mảng b
 => b: 5 6 7 1 2 3 4
-
+code:
+#include <iostream>
+#define Max 100
+using namespace std;
+void nhap(int a[], int n);
+void xuat(int a[], int n);
+void gop_dau(int a[], int na, int b[], int& nb);
+void gop_cuoi(int a[], int na, int b[], int& nb);
+int main() {
+	int a[Max] = { 1,2,3,4 }; int na = 4;
+	int b[Max] = { 5,6,7 }; int nb = 3;
+	xuat(a, na);
+	xuat(b, nb);
+	//gop_dau(a, na, b, nb);
+	gop_cuoi(a, na, b, nb);
+	xuat(a, na);
+	xuat(b, nb);
+	return 0;
+}
+void nhap(int a[], int n)
+{
+	cout << "=====Nhap=======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Nhap pt thu " << i << ": "; cin >> a[i];
+	}
+}
+void xuat(int a[], int n)
+{
+	cout << "======Xuat======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Pt thu " << i << " la: " << a[i] << endl;
+	}
+}
+//kĩ thuật  thêm
+void them(int a[], int& n, int vt, int x) {
+	//b1 dời 
+	for (int i = n; i > vt; i--) {
+		a[i] = a[i - 1];
+	}
+	//b2: chèn
+	a[vt] = x;
+	//b3 tăng  
+	n++;// có thay đổi
+}
+//kĩ thuật xóa
+void xoa(int a[], int& n, int vt) {
+	//b1 dời
+	for (int i = vt; i < n - 1; i++) {
+		a[i] = a[i + 1];
+	}
+	//b2 giảm
+	n--;
+}
+void gop_dau(int a[], int na, int b[], int &nb) {
+	//duyệt cuối về đầu mảng b
+	for (int i = na - 1; i >= 0; i--) {
+		them(b, nb, 0, a[i]);//thêm đầu mảng b
+	}
+}
+void gop_cuoi(int a[], int na, int b[], int& nb) {
+	//duyệt đầu về cuối mảng a
+	for (int i = 0; i < na; i++) {
+		//them(b, nb, nb, a[i]);// để thêm cuối mảng b
+		b[nb++] = a[i];
+	}
+}
 3. có 2 mảng a, b đã được sắp xếp TĂNG DẦN. Trộng mảng a, b vào c sao cho mảng c tăng dần.
 VD: a: 1 2 7
 b: 0 2 6 9
