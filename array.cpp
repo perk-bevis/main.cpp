@@ -437,7 +437,7 @@ Bài 3. Cho mảng 1 chiều các số nguyên. Viết chương trình xóa các
 VD: 1 4 2 2 1 5 4
 ==> 1 4 2 5
 =========================================================================
-code bài 1,2,3;
+code bài 1,2,3,4;
 #include <iostream>
 #include <map>
 #define Max 100
@@ -560,6 +560,36 @@ void xoa_trung(int a[],int &n) {
 				xoa(a, n, j);//xóa
 				j--;// tránh sót pt
 			}
+		}
+	}
+}
+
+Cho mảng 1 chiều các số nguyên. Viết chương trình đếm số lần xuất hiện của từng phần tử trong mảng.
+VD: 
+1 3 5 2 3 1
+==>
+Phần tử	Số lần xuất hiện
+1 	2
+2	1	
+3	2	
+5 	1
+void solanxuathien(int a[], int& n){
+	for (int i = 0; i < n; i++) {
+		int count = 1; // Bắt đầu đếm từ 1, vì bạn đang xét phần tử đầu tiên
+		for (int j = i + 1; j < n; j++) {
+			if (a[i] == a[j]) {
+				count++;
+			}
+		}
+		bool isDuplicate = false;
+		for (int k = 0; k < i; k++) {
+			if (a[k] == a[i]) {
+				isDuplicate = true;
+				break;
+			}
+		}
+		if (!isDuplicate) {
+			cout << a[i] << "\t" << count << endl;
 		}
 	}
 }
