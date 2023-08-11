@@ -444,23 +444,24 @@ code bài 1,2,3,4;
 using namespace std;
 void nhap(int a[], int n);
 void xuat(int a[], int n);
-void so_doi_xung(int a[], int &n);
+void so_doi_xung(int a[], int& n);
 int tong_uoc(int x);
 bool kt_so_hoan_thien(int x);
 void them_so_0_trc_pt_am(int a[], int& n);
 void xoa_trung(int a[], int& n);
+void solanxuathien(int a[], int& n);
 int main() {
 	int a[Max];
 	int n = 0;
 	do {
 		cout << "nhap n:"; cin >> n;
-	} while (n <=0 || n > Max);
+	} while (n <= 0 || n > Max);
 	nhap(a, n);
 	xuat(a, n);
 	//so_doi_xung(a, n);
 	//them_so_0_trc_pt_am(a, n);
-	xoa_trung(a, n);
-	xuat(a, n);
+	//xoa_trung(a, n);
+	solanxuathien(a, n);
 	return 0;
 }
 void nhap(int a[], int n)
@@ -491,7 +492,7 @@ void them(int a[], int& n, int vt, int x) {
 	n++;// có thay đổi
 }
 //kĩ thuật xóa
-void xoa(int a[], int &n, int vt) {
+void xoa(int a[], int& n, int vt) {
 	//b1 dời
 	for (int i = vt; i < n - 1; i++) {
 		a[i] = a[i + 1];
@@ -518,10 +519,10 @@ bool kt_so_doi_xung(int x) {
 	}
 	return (x == dao_so(x));
 }
-void so_doi_xung(int a[], int &n) {
+void so_doi_xung(int a[], int& n) {
 	for (int i = 0; i < n; i++) {
-		if(kt_so_doi_xung(a[i])==true) {             //(a[i] < 0) { // liệt kê số âm
-			xoa(a, n,i);// có sự thay đổi
+		if (kt_so_doi_xung(a[i]) == true) {             //(a[i] < 0) { // liệt kê số âm
+			xoa(a, n, i);// có sự thay đổi
 			i--;// tránh sót pt
 		}
 	}
@@ -553,7 +554,7 @@ void them_so_0_trc_pt_am(int a[], int& n) {
 //Cho mảng 1 chiều các số nguyên. Viết chương trình xóa các phần tử trùng nhau trong mảng, chỉ giữ lại duy nhất một phần tử phân biệt.
 //VD: 1 4 2 2 1 5 4
 //==> 1 4 2 5
-void xoa_trung(int a[],int &n) {
+void xoa_trung(int a[], int& n) {
 	for (int i = 0; i < n; i++) {
 		for (int j = i + 1; j < n; j++) {// quét tất cả phần tử còn lại của i
 			if (a[i] == a[j]) {// pt mẫu trùng pt đang xét
@@ -564,16 +565,16 @@ void xoa_trung(int a[],int &n) {
 	}
 }
 
-Cho mảng 1 chiều các số nguyên. Viết chương trình đếm số lần xuất hiện của từng phần tử trong mảng.
-VD: 
-1 3 5 2 3 1
-==>
-Phần tử	Số lần xuất hiện
-1 	2
-2	1	
-3	2	
-5 	1
-void solanxuathien(int a[], int& n){
+//Cho mảng 1 chiều các số nguyên.Viết chương trình đếm số lần xuất hiện của từng phần tử trong mảng.
+//VD:
+//1 3 5 2 3 1
+//==>
+//Phần tử	Số lần xuất hiện
+//1 	2
+//2	    1
+//3	    2
+//5 	1
+void solanxuathien(int a[], int& n) {
 	for (int i = 0; i < n; i++) {
 		int count = 1; // Bắt đầu đếm từ 1, vì bạn đang xét phần tử đầu tiên
 		for (int j = i + 1; j < n; j++) {
