@@ -752,7 +752,77 @@ VD: mảng a:   1   -2   3   4   -6   0
 Xuất:
 mảng a:   1   3    4   0
 mảng b:  -2    -6
+code:
+#include <iostream>
+#define Max 100
+using namespace std;
+void nhap(int a[], int n);
+void xuat(int a[], int n);
+void tach(int a[], int& na, int b[], int& nb);
+int main() {
+	int a[Max] = { 1,-2,3,4,-6,0 }; int na = 6;
+	int b[Max]; int nb = 0;
 
+	xuat(a, na);
+	xuat(b, nb);
+	tach(a, na, b, nb);
+	xuat(a, na); 
+	xuat(b, nb);
+	return 0;
+}
+void nhap(int a[], int n)
+{
+	cout << "=====Nhap=======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Nhap pt thu " << i << ": "; cin >> a[i];
+	}
+}
+void xuat(int a[], int n)
+{
+	cout << "======Xuat======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Pt thu " << i << " la: " << a[i] << endl;
+	}
+}
+//kĩ thuật  thêm
+void them(int a[], int& n, int vt, int x) {
+	//b1 dời 
+	for (int i = n; i > vt; i--) {
+		a[i] = a[i - 1];
+	}
+	//b2: chèn
+	a[vt] = x;
+	//b3 tăng  
+	n++;// có thay đổi
+}
+//kĩ thuật xóa
+void xoa(int a[], int& n, int vt) {
+	//b1 dời
+	for (int i = vt; i < n - 1; i++) {
+		a[i] = a[i + 1];
+	}
+	//b2 giảm
+	n--;
+}
+//Cho 1 mảng các số nguyên a.Viết chương trình tách(thêm và xóa) các số âm ra mảng b và xóa khỏi a
+//VD : mảng a : 1 - 2   3   4 - 6   0
+//Xuất :
+//	mảng a : 1   3    4   0
+//	mảng b : -2 - 6
+void tach(int a[], int &na, int b[], int &nb) {
+	//liệt kê phần tử âm của mảng a
+	for (int i = 0; i < na; i++) {
+		if (a[i] < 0) {
+			// tách = thêm cuối b+ xóa khỏi a
+			b[nb++] = a[i];
+			xoa(a, na, i);
+			i--;// lùi tránh sót pt 
+
+		}
+	}
+}
 5. (Tư duy + Xử lý) // Bài thi kết thúc học phần: Tin học cơ sở 2(PTIT HCM)
 Cho 1 mảng số nguyên. Sắp xếp các số âm nằm trước giảm dần tiếp đến là số 0 rồi đến các số dương giảm dần
 VD: mảng: 12pt:    -4     5      0      6      -1     0      8      3     -11    15    2    1  
