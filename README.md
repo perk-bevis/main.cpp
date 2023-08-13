@@ -34,3 +34,15 @@ web10: https://hnoj.edu.vn/problems/
 # oj.vnoi
 
 https://oj.vnoi.info/
+
+# code mely
+
+https://www.hackerrank.com/contests/300-bai-code-thieu-nhi/challenges
+
+# ae
+
+https://practice.geeksforgeeks.org/problems/c-2-d-arrays0708/1?page=2&difficulty[]=-2&category[]=Arrays&sortBy=submissions
+
+# le quy don
+
+http://lequydon.ntucoder.net/Problem/Details/4601
