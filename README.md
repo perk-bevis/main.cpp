@@ -46,3 +46,7 @@ https://practice.geeksforgeeks.org/problems/c-2-d-arrays0708/1?page=2&difficulty
 # le quy don
 
 http://lequydon.ntucoder.net/Problem/Details/4601
+
+web 2:
+
+https://lqdoj.edu.vn/
