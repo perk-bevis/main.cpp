@@ -828,6 +828,107 @@ Cho 1 mảng số nguyên. Sắp xếp các số âm nằm trước giảm dần
 VD: mảng: 12pt:    -4     5      0      6      -1     0      8      3     -11    15    2    1  
              Kết quả:     -1   -4    -11     0       0    15     8      6       5      3     2    1  
 Gợi ý: Sử dụng mảng phụ
+code:
+#include <iostream>
+#include <math.h> 
+#define Max 100
+using namespace std;
+void nhap(int a[], int n);
+void xuat(int a[], int n);
+void sap_xep_mang_giam(int a[], int n);
+void sap_xep_nang_cao(int a[], int na);
+int main() {
+	int a[Max] = { -4,5,0,6,- 1,0 ,8,3,- 11,15,2,1 }; int na = 12;
+	int b[Max]={}; int nb = 0;
+	xuat(a, na);
+	sap_xep_nang_cao(a, na);
+	xuat(a, na);
+	return 0;
+}
+void nhap(int a[], int n)
+{
+	cout << "=====Nhap=======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Nhap pt thu " << i << ": "; cin >> a[i];
+	}
+}
+void xuat(int a[], int n)
+{
+	cout << "======Xuat======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Pt thu " << i << " la: " << a[i] << endl;
+	}
+}
+//kĩ thuật  thêm
+void them(int a[], int& n, int vt, int x) {
+	//b1 dời 
+	for (int i = n; i > vt; i--) {
+		a[i] = a[i - 1];
+	}
+	//b2: chèn
+	a[vt] = x;
+	//b3 tăng  
+	n++;// có thay đổi
+}
+//kĩ thuật xóa
+void xoa(int a[], int& n, int vt) {
+	//b1 dời
+	for (int i = vt; i < n - 1; i++) {
+		a[i] = a[i + 1];
+	}
+	//b2 giảm
+	n--;
+}
+
+void gop_dau(int a[], int na, int b[], int& nb) {
+	//duyệt cuối về đầu mảng b
+	for (int i = na - 1; i >= 0; i--) {
+		them(b, nb, 0, a[i]);//thêm đầu mảng b
+	}
+}
+void gop_cuoi(int a[], int na, int b[], int& nb) {
+	//duyệt đầu về cuối mảng a
+	for (int i = 0; i < na; i++) {
+		//them(b, nb, nb, a[i]);// để thêm cuối mảng b
+		b[nb++] = a[i];
+	}
+}
+void sap_xep_mang_giam(int a[], int n) {
+	for (int i = 0; i < n; i++) {
+		for (int j = i + 1; j < n; j++) {
+			if (a[i] < a[j]) {
+				swap(a[i], a[j]);
+			}
+		}
+	}
+}
+void sap_xep_nang_cao(int a[],int na) {
+	int b[Max]; int nb = 0;// âm 
+	int c[Max]; int nc = 0;// dương
+	//b1 tách âm dương 
+	for (int i = 0; i < na; i++) {
+		if (a[i] > 0) {
+			c[nc++] = a[i];
+			xoa(a, na, i);
+			i--;
+		}
+		else if (a[i] < 0) {
+			b[nb++] = a[i];
+			xoa(a, na, i);
+			i--;
+		}
+	}
+	//b2 sắp xếp âm dương giảm dần
+	sap_xep_mang_giam(b, nb);
+	sap_xep_mang_giam(c, nc);
+	//b3 gộp
+	     //b3.1: gộp âm đầu a
+	gop_dau(b,nb,a,na);
+	     //b3,2 gộp dương cuối a
+	gop_cuoi(c, nc, a, na);
+}
 
 6. Cho mảng 1 chiều các số nguyên. Viết chương trình tìm phần tử lớn thứ k trong mảng
 VD: 2 15 3 -6 4     k = 2    =>  phần tử lớn thứ 2 là: 4
