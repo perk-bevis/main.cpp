@@ -932,7 +932,105 @@ void sap_xep_nang_cao(int a[],int na) {
 
 6. Cho mảng 1 chiều các số nguyên. Viết chương trình tìm phần tử lớn thứ k trong mảng
 VD: 2 15 3 -6 4     k = 2    =>  phần tử lớn thứ 2 là: 4
+code:
+#include <iostream>
+#include <math.h> 
+#define Max 100
+using namespace std;
+void nhap(int a[], int n);
+void xuat(int a[], int n);
+void tim_pt_max_thu_k(int a[], int n);
+int main() {
+	int a[Max] = { 15,4,15,-6,4,3,15,15 ,2 }; int na = 9;
+	xuat(a, na);
+	tim_pt_max_thu_k(a,na);
+	return 0;
+}
+void nhap(int a[], int n)
+{
+	cout << "=====Nhap=======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Nhap pt thu " << i << ": "; cin >> a[i];
+	}
+}
+void xuat(int a[], int n)
+{
+	cout << "======Xuat======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Pt thu " << i << " la: " << a[i] << endl;
+	}
+}
+//kĩ thuật  thêm
+void them(int a[], int& n, int vt, int x) {
+	//b1 dời 
+	for (int i = n; i > vt; i--) {
+		a[i] = a[i - 1];
+	}
+	//b2: chèn
+	a[vt] = x;
+	//b3 tăng  
+	n++;// có thay đổi
+}
+//kĩ thuật xóa
+void xoa(int a[], int& n, int vt) {
+	//b1 dời
+	for (int i = vt; i < n - 1; i++) {
+		a[i] = a[i + 1];
+	}
+	//b2 giảm
+	n--;
+}
 
+void gop_dau(int a[], int na, int b[], int& nb) {
+	//duyệt cuối về đầu mảng b
+	for (int i = na - 1; i >= 0; i--) {
+		them(b, nb, 0, a[i]);//thêm đầu mảng b
+	}
+}
+void gop_cuoi(int a[], int na, int b[], int& nb) {
+	//duyệt đầu về cuối mảng a
+	for (int i = 0; i < na; i++) {
+		//them(b, nb, nb, a[i]);// để thêm cuối mảng b
+		b[nb++] = a[i];
+	}
+}
+
+void sap_xep_giam(int a[], int n) {
+	for (int i = 0; i < n; i++) {
+		for (int j = i + 1; j < n; j++) {
+			if (a[i] < a[j]) {
+				swap(a[i], a[j]);
+			}
+		}
+	}
+}
+
+//6. Cho mảng 1 chiều các số nguyên.Viết chương trình tìm phần tử lớn thứ k trong mảng
+//VD : 2 15 3 - 6 4     k = 2 = > phần tử lớn thứ 2 là: 4
+void tim_pt_max_thu_k(int a[], int n) {
+	sap_xep_giam(a, n);
+	int dem = 1;
+	int k; cout << "nhap k: "; cin >> k;
+	int max = a[0];
+	if (k == 1) {
+		cout << "pt max thu " << k << "la: " << max << endl;
+	}
+	else {
+		for (int i = 1; i < n; i++) {
+			if (a[i] != max) {
+				max = a[i];
+				dem++;
+				if (dem == k) {
+					cout << "pt max thu " << k << " la: " << max << endl;
+					return;
+				}
+			}
+		}
+		cout << "khong tim thay!" << endl;
+	}
+}
 7. Viết chương trình tìm UCLN của tất cả các phần tử trong mảng 1 chiều các số nguyên.
 
 8. Cho mảng 1 chiều các số nguyên. Hãy tìm giá trị trong mảng các số nguyên xa giá trị x nhất(x nhập từ bàn phím)
