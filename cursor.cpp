@@ -1,3 +1,4 @@
+miền giá trị: lưu địa chỉ
 ========================================= BT vận dụng =============================
 1. Viết chương trình dùng con trỏ quản lí mảng n phần tử. Xuất phần tử lớn nhất và nhỏ nhất trong mảng.
 2. Viết chương trình dùng con trỏ quản lí mảng n phần tử.
