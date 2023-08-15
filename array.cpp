@@ -1037,7 +1037,168 @@ void tim_pt_max_thu_k(int a[], int n) {
 VD: 24 45 23 13 43 -12
 x = 15
 ==> giá trị trong mảng xa x nhất là: 45
-
+code:
+#include <iostream>
+#include <math.h> 
+#define Max 100
+using namespace std;
+void nhap(int a[], int n);
+void xuat(int a[], int n);
+void tim_gia_tri_xa_x_nhat(int a[], int n);
+int main() {
+	int a[Max] = { 24, 45, 23, 13, 43 ,- 12 }; int na = 6;
+	xuat(a, na);
+	tim_gia_tri_xa_x_nhat(a, na);
+	return 0;
+}
+void nhap(int a[], int n)
+{
+	cout << "=====Nhap=======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Nhap pt thu " << i << ": "; cin >> a[i];
+	}
+}
+void xuat(int a[], int n)
+{
+	cout << "======Xuat======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Pt thu " << i << " la: " << a[i] << endl;
+	}
+}
+//cách 1
+void tim_gia_tri_xa_x_nhat(int a[], int n) {
+	int x;
+	cout << "nhap x: "; cin >> x;
+	int kc_max = abs(a[0] - x);
+	int i_max = 0;
+	//tìm khoảng cách max
+	for (int i = 1; i < n; i++) {
+		int kc = abs(a[i] - x);
+		if (kc > kc_max) {
+			kc_max = kc;
+			i_max = i;
+		}
+	}
+	cout << " kc max la : " << kc_max << endl;
+	cout << "gt tao nen kc max la: " << a[i_max] << endl;
+}
+//cách 2
+void tim_gia_tri_xa_x_nhat(int a[], int n) {
+	int x;
+	cout << "nhap x: "; cin >> x;
+	int kc_max = abs(a[0] - x);
+	//tìm khoảng cách max
+	for (int i = 1; i < n; i++) {
+		int kc = abs(a[i] - x);
+		if (kc > kc_max) {
+			kc_max = kc;
+			
+		}
+	}
+	for (int i = 0; i < n; i++) {
+		int kc = abs(a[i] - x);
+		if (kc == kc_max) {
+			cout << "gt tao nen kc max la: " << a[i] << endl;
+		}
+	}
+}
 Bài 9. Cho mảng 1 chiều các số nguyên. Viết chương trình in ra các phần tử kề nhau mà cả hai đều chẵn.
 Bài 10. Cho mảng 1 chiều các số nguyên. Viết chương trình đảo ngược mảng. VD:  1 5 6 2  => 2 6 5 1
+code:
+#include <iostream>
+#include <math.h> 
+#define Max 100
+using namespace std;
+void nhap(int a[], int n);
+void xuat(int a[], int n);
+void dao_mang(int a[], int n);
+int main() {
+	int a[Max] = { 1,2,3,7,8 }; int na = 5;
+	xuat(a, na);
+	dao_mang(a, na);
+	xuat(a, na);
+	return 0;
+}
+void nhap(int a[], int n)
+{
+	cout << "=====Nhap=======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Nhap pt thu " << i << ": "; cin >> a[i];
+	}
+}
+void xuat(int a[], int n)
+{
+	cout << "======Xuat======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Pt thu " << i << " la: " << a[i] << endl;
+	}
+}
+void dao_mang(int a[], int n) {
+	for (int i = 0; i < n / 2; i++) {
+		swap(a[i], a[n - i - 1]);
+	}
+}
 Bài 11. Cho mảng 1 chiều các số nguyên. Hãy "dịch phải xoay vòng" k lần các phần tử trong mảng. VD: 1 5 6 2 3 , k = 2  => 2 3 1 5 6
+code:
+#include <iostream>
+#include <math.h> 
+#define Max 100
+using namespace std;
+void nhap(int a[], int n);
+void xuat(int a[], int n);
+void dich_phai(int a[], int n);
+int main() {
+	int a[Max] = { 1,2,3,7,8 }; int na = 5;
+	xuat(a, na);
+	dich_phai(a, na);
+	xuat(a, na);
+	return 0;
+}
+void nhap(int a[], int n)
+{
+	cout << "=====Nhap=======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Nhap pt thu " << i << ": "; cin >> a[i];
+	}
+}
+void xuat(int a[], int n)
+{
+	cout << "======Xuat======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Pt thu " << i << " la: " << a[i] << endl;
+	}
+}
+//kĩ thuật  thêm
+void them(int a[], int& n, int vt, int x) {
+	//b1 dời 
+	for (int i = n; i > vt; i--) {
+		a[i] = a[i - 1];
+	}
+	//b2: chèn
+	a[vt] = x;
+	//b3 tăng  
+	n++;// có thay đổi
+}
+//kĩ thuật xóa
+void xoa(int a[], int& n, int vt) {
+	//b1 dời
+	for (int i = vt; i < n - 1; i++) {
+		a[i] = a[i + 1];
+	}
+	//b2 giảm
+	n--;
+}
+void dich_phai(int a[], int n) {
+	int k; cout << "nhap k: " << endl;
+	cin >> k;
+	for (int i = 1; i <= k; i++) {
+		them(a, n, 0, a[n - 1]);
+		n--;
+	}
+}
