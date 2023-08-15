@@ -1032,7 +1032,78 @@ void tim_pt_max_thu_k(int a[], int n) {
 	}
 }
 7. Viết chương trình tìm UCLN của tất cả các phần tử trong mảng 1 chiều các số nguyên.
+code:
+#include <iostream>
+#include <math.h> 
+#define Max 100
+using namespace std;
+void nhap(int a[], int n);
+void xuat(int a[], int n);
+void ucln_mang(int a[], int n);
+int main() {
+	int a[Max];
+	int n = 0;
+	do {
+		cout << "nhap n:"; cin >> n;
+	} while (n <= 0 || n > Max);
+	nhap(a, n);
+	xuat(a, n);
+	ucln_mang(a, n);
+	xuat(a, n);
+	return 0;
+}
+void nhap(int a[], int n)
+{
+	cout << "=====Nhap=======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Nhap pt thu " << i << ": "; cin >> a[i];
+	}
+}
+void xuat(int a[], int n)
+{
+	cout << "======Xuat======" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Pt thu " << i << " la: " << a[i] << endl;
+	}
+}
+//kĩ thuật  thêm
+void them(int a[], int& n, int vt, int x) {
+	//b1 dời 
+	for (int i = n; i > vt; i--) {
+		a[i] = a[i - 1];
+	}
+	//b2: chèn
+	a[vt] = x;
+	//b3 tăng  
+	n++;// có thay đổi
+}
+//kĩ thuật xóa
+void xoa(int a[], int& n, int vt) {
+	//b1 dời
+	for (int i = vt; i < n - 1; i++) {
+		a[i] = a[i + 1];
+	}
+	//b2 giảm
+	n--;
+}
+int ucln(int a, int b) {
+	abs(a);
+	abs(b);
+	while (a != b) {
+		(a > b) ? a -= b : b -= a;
+	}
+	return a;
+}
 
+void ucln_mang(int a[], int n) {
+	int uc = a[0];
+	for (int i = 1; i > n; i++) {
+		uc = ucln(uc, a[i]);
+	}
+	cout << "ucln mang: " << uc << endl;
+}
 8. Cho mảng 1 chiều các số nguyên. Hãy tìm giá trị trong mảng các số nguyên xa giá trị x nhất(x nhập từ bàn phím)
 VD: 24 45 23 13 43 -12
 x = 15
