@@ -13,6 +13,20 @@ int main() {
 	cout << &p << endl;// địa chỉ nơi sinh ra
 
 }
+------------------------------------------
+#include <iostream>
+#include <math.h> 
+#define Max 100
+using namespace std;
+int main() {
+	int a[5] = { 1,2,3,7,8 };
+	int* p;
+	p = a;// p =&a //p= &a[0]
+	cout << *p << endl;
+	p = p + 1;
+	cout << *p << endl;;
+	return 0;
+}
 ========================================= BT vận dụng =============================
 1. Viết chương trình dùng con trỏ quản lí mảng n phần tử. Xuất phần tử lớn nhất và nhỏ nhất trong mảng.
 2. Viết chương trình dùng con trỏ quản lí mảng n phần tử.
