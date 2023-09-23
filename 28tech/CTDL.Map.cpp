@@ -112,3 +112,29 @@ int main()
     }
     return 0;
 }
+__________________
+1️⃣tìm từ có tần suất xuất hiện nhiều nhất
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main()
+{
+    map <string,int> mp;
+    int n; cin>>n;
+    for(int i=0;i <n;i++){
+        string s; cin >> s;
+        mp[s]++;
+    }
+    int max_fre = 0;
+    string res;
+    for(auto it : mp){
+        if(it.second > max_fre){
+            max_fre = it.second;
+            res = it.first;
+        }
+    }
+    cout << res <<" "<< max_fre << endl;
+    return 0;
+}
+2️⃣
