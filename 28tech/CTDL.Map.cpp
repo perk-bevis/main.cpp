@@ -19,3 +19,12 @@ int main(){
     }
     return 0;
 }
+___________________________
+đếm số lần xuất hiện của các phần tử trong mảng,sau đó in ra kèm theo tần suất của nó
+input: 8
+       1 1 2 1 3 5 1 4
+output: 1 4
+        2 1
+        3 1
+        4 1
+        5 1
