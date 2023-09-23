@@ -68,8 +68,8 @@ int main()
     }
     return 0;
 }
-––-----–——————
-//truy cập đến phần tử đầu tiên
+≠====≠===============≠
+––-----–——————≠≈
 #include <iostream>
 #include <set>
 using namespace std;
@@ -84,8 +84,10 @@ int main()
     for(int x : s){
         cout << x << " ";
     }
+    cout << endl;
+    //truy cập đến phần tử đầu tiên
     cout << *s.begin() << endl;
+    //truy cập đến phần tử cuối
+    cout << *s.rbegin() << endl;
     return 0;
 }
---—------------
-//truy cập đến phần tử cuối
