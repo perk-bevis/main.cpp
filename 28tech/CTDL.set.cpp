@@ -46,4 +46,25 @@ int main()
 }
 
 🔴 erase()
+#include <iostream>
+#include <set>
+using namespace std;
 
+int main()
+{
+    set<int>s;
+    for(int i=0;i<10;i++){
+        s.insert(i);
+    }
+    // duyet phan tu 
+    for(int x : s){
+        cout << x << " ";
+    }
+    cout << endl;
+    //s.erase(5);
+    s.erase(s.find(5));
+    for(int x : s){
+        cout << x << " ";
+    }
+    return 0;
+}
