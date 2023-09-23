@@ -13,3 +13,25 @@ int main(){
     }
     cout << s.size() << endl;
 }
+
+1️⃣≠=≠================ 
+#include <iostream>
+#include <set>
+using namespace std;
+
+int main()
+{
+    int n; cin >> n;
+    set<string>s;
+    cin.ignore();
+    for(int i =0; i<n;i++){
+        string str;
+        getline(cin,str);
+        s.insert(str);
+    }
+    cout << s.size() << endl;
+     for(string x : s){
+        cout << x << endl;
+    }
+    return 0;
+}
