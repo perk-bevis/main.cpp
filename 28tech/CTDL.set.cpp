@@ -85,6 +85,13 @@ int main()
         cout << x << " ";
     }
     cout << endl;
+    ------------
+    //cách duyệt 2 duyệt qua auto
+    for(auto x : s){
+        cout << x << endl;
+    }
+    //cách duyệt 3 duyệt qua interator
+    
     //truy cập đến phần tử đầu tiên
     cout << *s.begin() << endl;
     //truy cập đến phần tử cuối
