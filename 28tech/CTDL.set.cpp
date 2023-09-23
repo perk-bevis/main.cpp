@@ -70,5 +70,22 @@ int main()
 }
 ––-----–——————
 //truy cập đến phần tử đầu tiên
---_-------------
+#include <iostream>
+#include <set>
+using namespace std;
+
+int main()
+{
+    set<int>s;
+    for(int i=0;i<10;i++){
+        s.insert(i);
+    }
+    // duyet phan tu 
+    for(int x : s){
+        cout << x << " ";
+    }
+    cout << *s.begin() << endl;
+    return 0;
+}
+--—------------
 //truy cập đến phần tử cuối
