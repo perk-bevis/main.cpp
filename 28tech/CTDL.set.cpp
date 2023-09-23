@@ -102,3 +102,9 @@ int main()
 }
 
 🔴 multiset()
+cho mảng có n phần tử và số nguyên k đối với mỗi dãy con liên tiếp có chiều dài k
+in ra được phần tử lớn nhất trong dãy con đó
+ex:
+input: 10 3
+       1 2 3 1 4 5 1 8 9 10
+output: 3 3 4 5 5 8 9 10
