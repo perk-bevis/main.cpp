@@ -91,7 +91,9 @@ int main()
         cout << x << endl;
     }
     //cách duyệt 3 duyệt qua interator
-    for(set<int>::interator it = s.)
+    for(set <int> :: iterator it = s.begin(); it != s.end(); ++it){
+        cout << *it << " ";
+    }
     //truy cập đến phần tử đầu tiên
     cout << *s.begin() << endl;
     //truy cập đến phần tử cuối
