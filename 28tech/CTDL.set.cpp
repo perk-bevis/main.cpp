@@ -68,3 +68,7 @@ int main()
     }
     return 0;
 }
+––-----–——————
+//truy cập đến phần tử đầu tiên
+--_-------------
+//truy cập đến phần tử cuối
