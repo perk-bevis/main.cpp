@@ -14,8 +14,6 @@ int a[n];
 for(int i=0; i <n; i++){
 	cin >>a[i];
 }
-//c2 
-for(int &y :a) cin >> y
 //
 for(int x : a){
 	cout << x <<" ";
