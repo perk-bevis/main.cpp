@@ -22,11 +22,11 @@ int main(){
 ___________________________
 đếm số lần xuất hiện của các phần tử trong mảng,sau đó in ra kèm theo tần suất của nó
 input: 8
-       1 1 2 1 3 5 1 4
-output: 1 4
+       1 1 2 1 3 5 1 -4
+output: -4 1
+        1 4
         2 1
         3 1
-        4 1
         5 1
 code:
 #include <iostream>
@@ -43,6 +43,36 @@ int main()
     }
     for(auto it : mp){
         cout << it.first << " " << it.second <<endl;
+    }
+    return 0;
+}
+______________
+input: 8
+       1 1 2 1 3 5 1 -4
+output: 1 4
+        2 1
+        3 1
+        5 1
+        -4 1
+______________________
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main()
+{
+    map <int,int> mp;
+    int n; cin >>n;
+    int a[1000];
+    for(int i=0;i <n ;i++){
+        cin >> a[i];
+        mp[a[i]]++;
+    }
+    for(int i=0; i<n;i++){
+        if(mp[a[i]] != 0){
+            cout << a[i] << " " << mp[a[i]] << endl;
+            mp[a[i]] =0;
+        }
     }
     return 0;
 }
