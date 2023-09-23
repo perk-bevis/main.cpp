@@ -15,6 +15,19 @@ int main(){
 }
 
 1️⃣≠=≠================ 
+ex:
+input: 5
+    java
+    python
+    laptrinh
+    java
+    python
+output: 3
+    java
+    python
+    laptrinh
+🩸🩸🩸🩸🩸🩸🩸🩸
+code:-----
 #include <iostream>
 #include <set>
 using namespace std;
