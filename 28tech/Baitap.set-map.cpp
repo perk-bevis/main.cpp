@@ -53,3 +53,22 @@ link: https://youtu.be/JcSs5ryBAKg?si=6w7ylg5YRVxdrRmm
 🛑 BÀI TẬP SET VÀ MAP
 BÀI1: 
 code:
+1️⃣CÁCH 1
+#include <iostream>
+#include <set>
+using namespace std;
+
+int main()
+{
+    int t; cin >> t;
+    while(t--){
+        int n; cin>>n;
+        set<int> s;
+        for(int i=0 ;i <n ;i++){
+            int x;cin >>x;
+            s.insert(x);
+        }
+        cout<< s.size() <<endl;
+    }
+    return 0;
+}
