@@ -76,5 +76,7 @@ https://lqdoj.edu.vn/
 
 https://leetcode.com/
 
-# 28 tech
+# 28 tech 1️⃣
 https://drive.google.com/drive/u/0/mobile/folders/16UYePcMqhiyiTKbrZiJrQ5ko6VRnvR_r/1hEFjBBe-KM7ZQNqE0dXOMFygeApnZ5CJ?usp=sharing&sort=13&direction=a
+
+2️⃣ set và map https://drive.google.com/drive/folders/1VWie-IjesOi1H9bHa1D2FXwdDe1O4zTJ
