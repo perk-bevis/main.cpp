@@ -48,3 +48,8 @@ int main()
     }
     return 0;
 }
+==========≠=========≠====≈====∞============
+link: https://youtu.be/JcSs5ryBAKg?si=6w7ylg5YRVxdrRmm
+🛑 BÀI TẬP SET VÀ MAP
+BÀI1: 
+code:
