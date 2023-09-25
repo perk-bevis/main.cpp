@@ -15,10 +15,10 @@ int main(){
         }
          int q; cin >> q;
          while(q--){
-                  int x ; cin >> x;
-                  if(se.count(x) == 1) {
-                        cout << "YES\n";
-                  } else cout << "NO\n";
+               int x ; cin >> x;
+               if(se.count(x) == 1) {
+                  cout << "YES\n";
+               }else cout << "NO\n";
          }
     }
 }
