@@ -19,7 +19,7 @@ int main(){
 }
 ⭕🔴⭕🔴⭕ cách 2
 #include <iostream>
-#include <set>
+#include <map>
 using namespace std;
 using ll = long long;
 int main(){
