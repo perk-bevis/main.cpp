@@ -2,7 +2,7 @@
 #include <set>
 #include <sstream>
 using namespace std;
-using ll = long long;
+
 int main(){
     int t; cin>>t;
     cin.ignore();
@@ -21,6 +21,7 @@ int main(){
 ⭕🔴⭕🔴⭕ cách 2
 #include <iostream>
 #include <map>
+#include <sstream>
 using namespace std;
 using ll = long long;
 int main(){
@@ -32,7 +33,7 @@ int main(){
        map<string,int>mp;
        stringstream ss(s);
        string word;
-       while(ss > word){
+       while(ss >> word){
            mp[word]=true;
        }
        cout << mp.size()<< endl;
