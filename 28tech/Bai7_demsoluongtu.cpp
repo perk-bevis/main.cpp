@@ -1,5 +1,6 @@
 #include <iostream>
 #include <set>
+#include <sstream>
 using namespace std;
 using ll = long long;
 int main(){
@@ -11,7 +12,7 @@ int main(){
        set<string>se;
        stringstream ss(s);
        string word;
-       while(ss > word){
+       while(ss >> word){
            se.insert(word);
        }
        cout << se.size()<< endl;
