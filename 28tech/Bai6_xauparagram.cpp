@@ -19,7 +19,6 @@ int main(){
 }
 ⭕🛑⭕🔴cách 2
 #include <iostream>
-#include <set>
 using namespace std;
 using ll = long long;
 int main(){
@@ -33,6 +32,28 @@ int main(){
            mp[tolower(x)]= true;
        }
        if(mp.size() == 26) cout << "yes\n";
+       else cout << "no\n";
+    }
+}
+⭕🔴⭕🔴cách 3
+#include <iostream>
+using namespace std;
+using ll = long long;
+int main(){
+    int t; cin>>t;
+    cin.ignore();
+    while(t--){
+       string s;
+       getline(cin,s);
+       int a[26] = {0};
+       for(char x : s){
+           a[tolower(x) -'a']= 1;
+       }
+       int cnt = 0;
+       for(int i =0;i<26;i++){
+           cnt += a[i];
+       }
+       if(cnt == 26) cout << "yes\n";
        else cout << "no\n";
     }
 }
