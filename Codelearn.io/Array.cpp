@@ -32,3 +32,22 @@ Thì màn hình sẽ hiển thị:
 
 9
 Giải thích: mảng này có 5 phần tử và 9 là phần tử lớn nhất trong mảng.
+code
+#include<iostream>
+using namespace std;
+int main() {
+    int n; cin>> n;
+    int a[n];
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+    int max = a[0];
+    for (int i = 0; i < n; i++) {
+        if (a[i] > max) {
+            max = a[i];
+        }
+    }
+    cout << max << endl;
+
+    return 0;
+}
