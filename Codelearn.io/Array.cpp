@@ -1,4 +1,4 @@
-Bạn hãy viết chương trình nhập vào từ bàn phím 10 số nguyên và hiển thị ra tổng của 10 số này.
+⭕Bạn hãy viết chương trình nhập vào từ bàn phím 10 số nguyên và hiển thị ra tổng của 10 số này.
 
 Ví dụ nếu nhập:
 
@@ -22,3 +22,13 @@ int main() {
 
     return 0;
 }
+🔴Cho một mảng các số nguyên n phần tử arr được nhập từ bàn phím.
+Bạn hãy viết chương trình hiển thị ra phần tử lớn nhất trong mảng. 
+Ví dụ nếu bạn nhập n = 5, arr = [2, 7, 6, 8, 9] như bên dưới:
+
+5
+2 7 6 8 9
+Thì màn hình sẽ hiển thị:
+
+9
+Giải thích: mảng này có 5 phần tử và 9 là phần tử lớn nhất trong mảng.
