@@ -58,7 +58,6 @@ int main() {
 Thì màn hình sẽ hiển thị:
 
 11
-Nếu bạn chưa làm được bài này thì có thể xem hướng dẫn ở bên dưới.
 code:
 #include<iostream>
 using namespace std;
@@ -82,5 +81,22 @@ Thì màn hình hiển thị lên:
 
 3
 Giải thích: trong mảng có 3 phần tử có giá trị bằng 3.
-
-Nếu bạn chưa làm được bài này thì có thể xem hướng dẫn ở bên dưới.
+code:
+#include<iostream>
+using namespace std;
+int main() {
+    int n,k; cin>> n;
+    int a[n];
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+    cin >> k;
+    int count =0;
+    for(int i =0; i<n; i++){
+        if(a[i]==k){
+            count++;
+        }
+    }
+    cout << count << endl;
+    return 0;
+}
