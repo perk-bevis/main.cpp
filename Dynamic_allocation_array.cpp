@@ -1,3 +1,4 @@
+🔴mảng tĩnh:
 nhập vào mảng một chiều các số nguyên viết chương trình in ra các phần tử là số chẵn của mảng
 code:
 #include <iostream>
