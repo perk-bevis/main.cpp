@@ -146,6 +146,7 @@ void them(int *&a, int &n,int vt,int x){
 }
 int main()
 {
+    int *a;
     int n;
     do{
         cout << "\n nhap so luong phan tu mang: ";
@@ -155,7 +156,7 @@ int main()
             system("pause");
         }
     }while(n <= 0);
-    int *a = new int[n];
+    a = new int[n];
     cout <<"\n\n\t\t nhap mang\n";
     nhap_mang(a,n);
     cout << "\n\n\t\t xuat mang\n" << " ";
