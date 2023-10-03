@@ -52,20 +52,20 @@ int main()
 using namespace std;
 #define MAX 100
 //ham nhap mang 
-void nhap_mang(int a[],int n){
+void nhap_mang(int *a,int n){
     for(int i=0; i < n;i++){
         cout << "\n nhap phan tu a [" << i << "] =";
         cin >> a[i];
     }
 }
 // ham xuat mang
-void xuat_mang(int a[],int n){
+void xuat_mang(int *a,int n){
     for(int i=0; i < n;i++){
         cout << a[i] << " ";
     }
 }
 //
-void xu_ly(int a[],int n){
+void xu_ly(int *a,int n){
     for(int i =0;i<n;i++){
         if(a[i] % 2 == 0){
             cout << a[i] << " ";
@@ -84,15 +84,15 @@ int main()
         }
     }while(n <= 0);
     // cách 1
-    int *a;
-    a = new int[n];
+    //int *a;
+    //a = new int[n];
     // cách 2
     int *a = new int[n];
-    cout <<"\n\n\t\t nhap mang";
+    cout <<"\n\n\t\t nhap mang\n";
     nhap_mang(a,n);
-    cout << "\n\n\t\t xuat mang" << " ";
+    cout << "\n\n\t\t xuat mang\n" << " ";
     xuat_mang(a,n);
-    cout << "\n\n\t\t  xu ly " << " ";
+    cout << "\n\n\t\t  xu ly \n" << " ";
     xu_ly(a,n);
     delete[] a;
     system("pause");
