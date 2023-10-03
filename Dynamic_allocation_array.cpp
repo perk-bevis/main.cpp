@@ -98,3 +98,4 @@ int main()
     system("pause");
     return 0;
 }
+=========thuật toán thêm xoá bằng mảng động ============
