@@ -94,6 +94,7 @@ int main()
     xuat_mang(a,n);
     cout << "\n\n\t\t  xu ly " << " ";
     xu_ly(a,n);
+    delete[] a;
     system("pause");
     return 0;
 }
