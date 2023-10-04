@@ -48,6 +48,7 @@ int main()
 }
 ≠================××××××××××××××××××××
 =================MẢNG ĐỘNG========={{
+🛑🔴 HÀM THÊM
 #include <iostream>
 using namespace std;
 
@@ -123,5 +124,77 @@ int main()
     xuat_mang(a,n);
     delete[] a;
     //system("pause");
+    return 0;
+}
+🔴🛑 HÀM XOÁ
+#include <iostream>
+using namespace std;
+
+//ham nhap mang 
+void nhap_mang(int *a,int n){
+    for(int i=0; i < n;i++){
+        cout << "\n nhap phan tu a [" << i << "] =";
+        cin >> a[i];
+    }
+}
+
+// ham xuat mang
+void xuat_mang(int *a,int n){
+    for(int i=0; i < n;i++){
+        cout << a[i] << " ";
+    }
+    
+}
+
+void xoa(int a[], int &n, int vt) {
+	//b1 dời
+	for (int i = vt; i < n - 1; i++) {
+		a[i] = a[i + 1];
+	}
+	//sau khi xoa phan tu tai vi tri vt - thi chung ta can phai thu hep vung nho ban dau
+    //b1 tao mang phu temp chua cac phan tu cua mang a
+    int *temp = new int[n];
+    for(int i=0;i<n;i++){
+        temp[i]= a[i];//bo lan luot cac phan tu cua mang a sang cho mang temp
+        //b2 giai phong vung nho cua a di truoc 
+        delete[] a;
+        //b3 cap phat lai vung nho moi cho a ==> mang a se giam 1 o nho
+        a = new int[n]; //cap phat lai vung nho cho mang a voi so luong phan tu mang giam xuong 1 o nho
+        }
+     //b4 do tat ca cac phan tu cua mang temp ve lai cho mang a
+        for(int i =0;i<n;i++){
+            a[i] = temp[i];
+        }
+        delete[] temp;// giai phong vung nho cho temp khi khong can dung nua
+        //b2 giam
+        n--;
+}
+
+int main()
+{
+    int *a;
+    int n;
+    do{
+        cout << "\n nhap so luong phan tu mang: ";
+        cin >> n;
+        if(n <= 0){
+            cout << "\n so luong pt khong hop le";
+            system("pause");
+        }
+    }while(n <= 0);
+    a = new int[n];
+    cout <<"\n\n\t\t nhap mang\n";
+    nhap_mang(a,n);
+    cout << "\n\n\t\t xuat mang\n" << " ";
+    xuat_mang(a,n);
+ 
+    int vt;
+    cout << "\n nhap vi tri can xoa: ";
+    cin >> vt;
+    
+    xoa(a,n,vt);
+    xuat_mang(a,n);
+    delete[] a;
+    system("pause");
     return 0;
 }
