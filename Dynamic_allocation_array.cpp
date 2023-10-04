@@ -198,3 +198,105 @@ int main()
     system("pause");
     return 0;
 }
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+⭕⭕⭕⭕⭕⭕⭕⭕⭕
+TẠO HÀM TƯƠNG TỰ GIỐNG HÀM RELLOC BÊN C
+🩸🩸CODE:
+#include <iostream>
+using namespace std;
+
+//ham nhap mang 
+void nhap_mang(int *a,int n){
+    for(int i=0; i < n;i++){
+        cout << "\n nhap phan tu a [" << i << "] =";
+        cin >> a[i];
+    }
+}
+
+// ham xuat mang
+void xuat_mang(int *a,int n){
+    for(int i=0; i < n;i++){
+        cout << a[i] << " ";
+    }
+    
+}
+void cap_phat_lai_vung_nho(int *&a, int vung_nho_moi, int vung_nho_cu){
+    //b1 tao mang phu temp chua cac phan tu cua mang a
+    int *temp = new int[vung_nho_cu];
+    for(int i=0;i<vung_nho_cu;i++){
+        temp[i]= a[i];//bo lan luot cac phan tu cua mang a sang cho mang temp
+        //b2 giai phong vung nho cua a di truoc 
+        delete[] a;
+        //b3 cap phat lai vung nho moi cho a dua vao vung_nho_moi
+        a = new int[vung_nho_moi]; //cap phat lai vung nho cho mang a voi so luong phan tu mang la vung_nho_moi
+        }
+     //b4 do tat ca cac phan tu cua mang temp ve lai cho mang a
+        for(int i =0;i<vung_nho_cu;i++){
+            a[i] = temp[i];
+        }
+        delete[] temp;// giai phong vung nho cho temp khi khong can dung nua
+}
+
+
+void them(int *&a, int &n,int vt,int x){
+    cap_phat_lai_vung_nho(a,n+1,n);
+    //====ki thuat them====
+    //b1 dời 
+	for (int i = n; i > vt; i--) {
+		a[i] = a[i - 1];
+	}
+    //b2: chèn
+	a[vt] = x;
+	//b3 tăng  
+	n++;// có thay đổi
+}
+
+void xoa(int a[], int &n, int vt) {
+	//b1 dời
+	for (int i = vt; i < n-1; i++) {
+	      a[i]=a[i +1];
+	}
+	cap_phat_lai_vung_nho(a,n,n);
+	n--;
+}
+
+int main()
+{
+    int *a;
+    int n;
+    do{
+        cout << "\n nhap so luong phan tu mang: ";
+        cin >> n;
+        if(n <= 0){
+            cout << "\n so luong pt khong hop le";
+            system("pause");
+        }
+    }while(n <= 0);
+    a = new int[n];
+    cout <<"\n\n\t\t nhap mang\n";
+    nhap_mang(a,n);
+    cout << "\n\n\t\t xuat mang\n" << " ";
+    xuat_mang(a,n);
+// ___________ ham them
+   int x;
+   cout << "\n nhap phan tu can them: ";
+   cin>>x;
+    
+   int vt;
+   cout << "\n nhap vi tri can them: ";
+   cin >> vt;
+    
+   them(a,n,vt,x);
+   xuat_mang(a,n);
+   ====ham xoa======
+   int vt;
+   cout << "\n nhap vi tri can xoa: ";
+    cin >> vt;
+    
+    xoa(a,n,vt);
+    cout << "\n\n\t\t mang sau khi xoa \n";
+    xuat_mang(a,n);
+    delete[] a;
+    //system("pause");
+    return 0;
+}
