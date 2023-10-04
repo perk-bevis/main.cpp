@@ -147,21 +147,24 @@ void xuat_mang(int *a,int n){
 }
 
 void xoa(int a[], int &n, int vt) {
-	//b1 dời
-	for (int i = vt; i < n - 1; i++) {
-		a[i] = a[i + 1];
-	}
-	//sau khi xoa phan tu tai vi tri vt - thi chung ta can phai thu hep vung nho ban dau
+  //b1 dời
+  for (int i = vt; i < n - 1; i++) {
+    a[i] = a[i + 1];
+  }
+  
+  //sau khi xoa phan tu tai vi tri vt - thi chung ta can phai thu hep vung nho ban dau
     //b1 tao mang phu temp chua cac phan tu cua mang a
     int *temp = new int[n];
     for(int i=0;i<n;i++){
         temp[i]= a[i];//bo lan luot cac phan tu cua mang a sang cho mang temp
-        //b2 giai phong vung nho cua a di truoc 
-        delete[] a;
-        //b3 cap phat lai vung nho moi cho a ==> mang a se giam 1 o nho
+    }
+    //b2 giai phong vung nho cua a di truoc 
+    delete[] a;
+        
+    //b3 cap phat lai vung nho moi cho a ==> mang a se giam 1 o nho
         a = new int[n]; //cap phat lai vung nho cho mang a voi so luong phan tu mang giam xuong 1 o nho
-        }
-     //b4 do tat ca cac phan tu cua mang temp ve lai cho mang a
+        
+        //b4 do tat ca cac phan tu cua mang temp ve lai cho mang a
         for(int i =0;i<n;i++){
             a[i] = temp[i];
         }
