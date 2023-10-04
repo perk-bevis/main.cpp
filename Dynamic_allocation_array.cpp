@@ -239,13 +239,14 @@ void cap_phat_lai_vung_nho(int *&a, int vung_nho_moi, int vung_nho_cu){
 
 
 void them(int *&a, int &n,int vt,int x){
-    cap_phat_lai_vung_nho(a,n+1,n);
-    //====ki thuat them====
-    //b1 dời 
+	//truoc khi them phan tu x vao vt - thi chung ta cap phat vung nho cho mang 
+        cap_phat_lai_vung_nho(a,n+1,n);
+        //====ki thuat them====
+         //b1 dời 
 	for (int i = n; i > vt; i--) {
 		a[i] = a[i - 1];
 	}
-    //b2: chèn
+        //b2: chèn
 	a[vt] = x;
 	//b3 tăng  
 	n++;// có thay đổi
