@@ -296,14 +296,14 @@ int main()
    ====ham xoa======
    int vt;
    cout << "\n nhap vi tri can xoa: ";
-    cin >> vt;
+   cin >> vt;
     
-    xoa(a,n,vt);
-    cout << "\n\n\t\t mang sau khi xoa \n";
-    xuat_mang(a,n);
-    delete[] a;
-    //system("pause");
-    return 0;
+   xoa(a,n,vt);
+   cout << "\n\n\t\t mang sau khi xoa \n";
+   xuat_mang(a,n);
+   delete[] a;
+   //system("pause");
+   return 0;
 }
 =========kĩ thuật trộn mảng động =========
 #include<iostream>
