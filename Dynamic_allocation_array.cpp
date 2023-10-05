@@ -162,15 +162,15 @@ void xoa(int a[], int &n, int vt) {
     delete[] a;
         
     //b3 cap phat lai vung nho moi cho a ==> mang a se giam 1 o nho
-        a = new int[n]; //cap phat lai vung nho cho mang a voi so luong phan tu mang giam xuong 1 o nho
+    a = new int[n]; //cap phat lai vung nho cho mang a voi so luong phan tu mang giam xuong 1 o nho
         
-        //b4 do tat ca cac phan tu cua mang temp ve lai cho mang a
-        for(int i =0;i<n;i++){
-            a[i] = temp[i];
-        }
-        delete[] temp;// giai phong vung nho cho temp khi khong can dung nua
-        //b2 giam
-        n--;
+    //b4 do tat ca cac phan tu cua mang temp ve lai cho mang a
+    for(int i =0;i<n;i++){
+        a[i] = temp[i];
+    }
+    delete[] temp;// giai phong vung nho cho temp khi khong can dung nua
+    //b2 giam
+    n--;
 }
 
 int main()
