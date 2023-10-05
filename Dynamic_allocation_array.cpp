@@ -74,25 +74,26 @@ void them(int *&a, int &n,int vt,int x){
     int *temp = new int[n];
     for(int i=0;i<n;i++){
         temp[i]= a[i];//bo lan luot cac phan tu cua mang a sang cho mang temp
-        //b2 giai phong vung nho cua a di truoc 
-        delete[] a;
-        //b3 cap phat lai vung nho moi cho a ==> mang a se tang len 1 o nho
-        a = new int[n +1]; //cap phat lai vung nho cho mang a voi so luong phan tu mang tang len 1 o nho
-        }
-     //b4 do tat ca cac phan tu cua mang temp ve lai cho mang a
-        for(int i =0;i<n;i++){
-            a[i] = temp[i];
-        }
-        delete[] temp;// giai phong vung nho cho temp khi khong can dung nua
+    }
+    //b2 giai phong vung nho cua a di truoc 
+    delete[] a;
+    //b3 cap phat lai vung nho moi cho a ==> mang a se tang len 1 o nho
+    a = new int[n +1]; //cap phat lai vung nho cho mang a voi so luong phan tu mang tang len 1 o nho
+        
+    //b4 do tat ca cac phan tu cua mang temp ve lai cho mang a
+    for(int i =0;i<n;i++){
+        a[i] = temp[i];
+    }
+    delete[] temp;// giai phong vung nho cho temp khi khong can dung nua
     //====ki thuat them====
     //b1 dời 
-	for (int i = n; i > vt; i--) {
-		a[i] = a[i - 1];
-	}
+    for (int i = n; i > vt; i--) {
+	a[i] = a[i - 1];
+    }
     //b2: chèn
-	a[vt] = x;
-	//b3 tăng  
-	n++;// có thay đổi
+    a[vt] = x;
+    //b3 tăng  
+    n++;// có thay đổi
 }
 int main()
 {
