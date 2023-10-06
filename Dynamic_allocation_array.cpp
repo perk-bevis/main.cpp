@@ -428,3 +428,107 @@ int main()
 	system("pause");
 	return 0;
 }
+≠========kĩ thuật siêu mảng động =====°°°°°°°°°°
+🔴🛑⭕CODE:
+#include<iostream>
+using namespace std;
+
+
+// hàm nhập mảng
+void Nhap_Mang(int *a, int n)
+{
+  for (int i = 0; i < n; i++)
+  {
+    cout << "\nNhap phan tu a[" << i << "]= ";
+    cin >> a[i]; // <=> *(a + i)
+  }
+}
+
+// hàm xuất mảng
+void Xuat_Mang(int *a, int n)
+{
+  for (int i = 0; i < n; i++)
+  {
+    cout << a[i] << " ";
+  }
+}
+
+// TẠO HÀM TƯƠNG TỰ realloc bên C
+void cap_phat_lai_vung_nho(int *&a, int vung_nho_moi, int vung_nho_cu){
+    //b1 tao mang phu temp chua cac phan tu cua mang a
+    int *temp = new int[vung_nho_cu];
+    for(int i=0;i<vung_nho_cu;i++){
+        temp[i]= a[i];//bo lan luot cac phan tu cua mang a sang cho mang temp
+        //b2 giai phong vung nho cua a di truoc 
+        delete[] a;
+        //b3 cap phat lai vung nho moi cho a dua vao vung_nho_moi
+        a = new int[vung_nho_moi]; //cap phat lai vung nho cho mang a voi so luong phan tu mang la vung_nho_moi
+        }
+     //b4 do tat ca cac phan tu cua mang temp ve lai cho mang a
+        for(int i =0;i<vung_nho_cu;i++){
+            a[i] = temp[i];
+        }
+        delete[] temp;// giai phong vung nho cho temp khi khong can dung nua
+}
+
+
+// hàm menu - xử lý tất cả các yêu cầu bài toán
+void Menu(int *&a, int n)
+{
+  int luachon;
+  while (true)
+  {
+    system("cls"); // xóa màn hình trước đó
+    cout << "\n\n\t\t =========== MENU ===========";
+    cout << "\n1. Nhap phan tu cho mang";
+    cout << "\n2. Xuat mang";
+    cout << "\n0. Ket thuc chuong trinh";
+    cout << "\n\n\t\t ===========  END ===========";
+
+    cout << "\nNhap vao lua chon: ";
+    cin >> luachon;
+    
+    switch (luachon)
+    {
+    case 0:
+    {
+          return; // kết thúc hàm
+    }break;
+    case 1:
+    {
+          int x;
+          cout << "\nNhap phan tu: ";
+          cin >> x;
+         // kĩ thuật siêu mảng động
+          if (n == 0)
+          {
+            a = new int; // cấp phát 1 ô nhớ cho mảng
+          }
+          else
+          {
+            cap_phat_lai_vung_nho(a, n + 1, n); // trước khi thêm vào mảng động thì sẽ nới rộng ra 1 ô nhớ
+          }
+          a[n] = x; // thêm giá trị vào vị trí cuối mảng
+          n++; // số lượng phần tử mảng tăng lên
+    }break;
+    case 2:
+    {
+          cout << "\n\n\t\t XUAT MANG\n";
+          Xuat_Mang(a, n);
+          system("pause");
+    }break;
+    }
+
+  }
+}
+
+int main()
+{
+  int *a = NULL; // con trỏ a sẽ quản lí cái mảng động của chúng ta, đầu tiên cho con trỏ trỏ đến vùng nhớ NULL <=> chưa cấp phát vùng nhớ cho con trỏ
+  int n = 0; // số lượng phần tử của mảng
+  Menu(a, n); // gọi lại hàm menu xư lý các yêu cầu của chương trình
+
+  delete[] a; // giải phóng vùng nhớ cho mảng con trỏ a
+  system("pause");
+  return 0;
+}
