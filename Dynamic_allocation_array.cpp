@@ -605,3 +605,100 @@ int main(){
   system("pause");
   return 0;
 }
+🔴=======🔴
+#include<iostream>
+using namespace std;
+#define MAX_DONG 100
+#define MAX_COT 100
+
+// hàm nhập mảng 2 chiều
+void Nhap_Mang_2_Chieu(int a[][MAX_COT], int dong, int cot)
+{
+  // điều khiển chỉ số dòng
+  for (int i = 0; i < dong; i++)
+  {
+    // điều khiển chỉ số cột
+    for (int j = 0; j < cot; j++)
+    {
+      cout << "\nNhap phan tu a[" << i << "][" << j << "] = ";
+      cin >> a[i][j]; // nhập phần tử tại dòng thứ i và cột thứ j
+    }
+  }
+}
+
+// hàm xuất mảng 2 chiều
+void Xuat_Mang_2_Chieu(int a[][MAX_COT], int dong, int cot)
+{
+  // điều khiển chỉ số dòng
+  for (int i = 0; i < dong; i++)
+  {
+    // điều khiển chỉ số cột
+    for (int j = 0; j < cot; j++)
+    {
+      cout << a[i][j] << "  ";
+    }
+    cout << endl; 
+  }
+}
+
+bool  kt_snt(int x) {
+  if (x <= 1) {
+    return false;
+  }
+  else {
+    for (int i = 2; i < x-1; i++) {
+      if (x % i == 0) {
+        return false;// ko phải số nguyên tố
+      }
+    }
+    return true;//snt
+  }
+}
+
+int tong_cac_snt(int a[][MAX_COT], int dong,int cot) {
+  int tong = 0;
+  for (int i = 0; i < dong; i++) {
+    for(int j=0;j<cot;j++){
+      if (kt_snt(a[i][j]) == true) {
+          tong += a[i][j];
+      }
+    }
+  }
+  return tong;
+}
+int main(){
+  int a[MAX_DONG][MAX_COT];
+  int dong;
+  int cot;
+
+  // kiểm tra số dòng
+  do
+  {
+    cout << "\nNhap vao so dong: ";
+    cin >> dong;
+    if (dong <= 0 || dong > MAX_DONG)
+    {
+      cout << "\nSo dong phai nam trong [1, " << ", " << MAX_DONG << "]";
+    }
+  } while (dong <= 0 || dong > MAX_DONG);
+  
+  // kiểm tra cột
+  do
+  {
+    cout << "\nNhap vao so cot: ";
+    cin >> cot;
+    if (cot <= 0 || cot > MAX_COT)
+    {
+      cout << "\nSo cot phai nam trong [1, " << ", " << MAX_COT << "]";
+    }
+  } while (cot <= 0 || cot > MAX_COT);
+
+  cout << "\n\n\t\t NHAP GIA TRI CHO MANG 2 CHIEU\n";
+  Nhap_Mang_2_Chieu(a, dong, cot);
+  cout << "\n\n\t\t MANG 2 CHIEU\n";
+  Xuat_Mang_2_Chieu(a, dong, cot);
+  cout << tong_cac_snt(a,dong,cot) << " ";
+
+  system("pause");
+  return 0;
+}
