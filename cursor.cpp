@@ -109,3 +109,9 @@ Xuất các phần tử là số nguyên tố
 4. Viết chương trình dùng con trỏ quản lí mảng. Thêm phần tử có giá trị x tại vị trí vt nhập từ bàn phím
 ----------
 5. Viết chương trình dùng con trỏ quản lí mảng. Sắp xếp các phần tử trong mảng tăng dần.
+DÙNG MẢNG ĐỘNG GIẢI CÁC BÀI TẬP BÊN DƯỚI.
+1. Tìm x nhập từ bàn phím có tồn tại trong mảng không
+2. Tính tổng các pt âm
+3. Liệt kê các pt là số đối xứng.
+4. Kiểm tra mảng toàn dương
+5. Thêm pt 0 trước số đối xứng
