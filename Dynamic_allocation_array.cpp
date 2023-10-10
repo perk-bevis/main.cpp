@@ -606,6 +606,7 @@ int main(){
   return 0;
 }
 🔴=======🔴
+tímh tổng các số nguyên tố trong ma trận
 #include<iostream>
 using namespace std;
 #define MAX_DONG 100
