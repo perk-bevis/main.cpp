@@ -606,7 +606,7 @@ int main(){
   return 0;
 }
 🔴=======🔴
-tímh tổng các số nguyên tố trong ma trận
+
 #include<iostream>
 using namespace std;
 #define MAX_DONG 100
@@ -641,7 +641,7 @@ void Xuat_Mang_2_Chieu(int a[][MAX_COT], int dong, int cot)
     cout << endl; 
   }
 }
-
+//tímh tổng các số nguyên tố trong ma trận
 bool  kt_snt(int x) {
   if (x <= 1) {
     return false;
@@ -666,6 +666,53 @@ int tong_cac_snt(int a[][MAX_COT], int dong,int cot) {
     }
   }
   return tong;
+}
+// Tính tổng các phần tử trên từng dòng
+void Tinh_Tong_Tung_Dong(int a[][MAX_COT], int dong, int cot)
+{
+	// duyệt qua từng phần tử trong mảng 2 chiều
+	for (int i = 0; i < dong; i++)
+	{
+		int tong = 0;
+		for (int j = 0; j < cot; j++)
+		{
+			tong += a[i][j]; // tính tổng trên dòng thứ i
+		}
+		cout << "\n\t TONG TREN DONG THU " << i << ": " << tong;
+	}
+}
+
+// Tính tổng các phần tử trên từng cột
+void Tinh_Tong_Tung_Cot(int a[][MAX_COT], int dong, int cot)
+{
+	// duyệt qua từng phần tử trong mảng 2 chiều
+	for (int i = 0; i < cot; i++)
+	{
+		int tong = 0;
+		for (int j = 0; j < dong; j++)
+		{
+			tong += a[j][i]; // tính tổng trên cột thứ i
+		}
+		cout << "\n\t TONG TREN COT THU " << i << ": " << tong;
+	}
+}
+
+// Xuất các phần tử trên đường chéo chính
+void Phan_Tu_Duong_Cheo_Chinh(int a[][MAX_COT], int dong, int cot)
+{
+	for (int i = 0; i < dong; i++)
+	{
+		cout << a[i][i] << " ";
+	}
+}
+
+// Xuất các phần tử trên đường chéo phụ
+void Phan_Tu_Duong_Cheo_Phu(int a[][MAX_COT], int dong, int cot)
+{
+	for (int i = 0; i < cot; i++)
+	{
+		cout << a[i][cot - i - 1] << " ";
+	}
 }
 int main(){
   int a[MAX_DONG][MAX_COT];
@@ -699,7 +746,15 @@ int main(){
   cout << "\n\n\t\t MANG 2 CHIEU\n";
   Xuat_Mang_2_Chieu(a, dong, cot);
   cout << tong_cac_snt(a,dong,cot) << " ";
+  //Tinh_Tong_Tung_Dong(a, dong, cot);
 
+  //Tinh_Tong_Tung_Cot(a, dong, cot);
+
+  /*cout << "\n\n\t\t CAC PHAN TU NAM TREN DUONG CHEO CHINH: ";
+  Phan_Tu_Duong_Cheo_Chinh(a, dong, cot);*/
+
+  cout << "\n\n\t\t CAC PHAN TU NAM TREN DUONG CHEO PHU: ";
+  Phan_Tu_Duong_Cheo_Phu(a, dong, cot);
   system("pause");
   return 0;
 }
