@@ -200,7 +200,7 @@ void them(char s[], int vt ,int x){
     //b2: chèn
   s[vt] = x;
   //b3 tăng  
-  s[n++];
+  s[n+1];
 }
 int main(){
   char str1[30];
@@ -214,3 +214,25 @@ int main(){
 }
 ------------------
 🩸🩸🩸🩸🩸
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+
+void them(char s[], int vitrithem ,char kituthem){
+  int n = strlen(s);
+  for(int i = n -1;i >= vitrithem;i--){
+    s[i+1]=s[i];
+  }
+  s[vitrithem] = kituthem;
+  s[n+1] = '\0';//xác định lại kí tự \0
+}
+int main(){
+  char str1[30];
+  printf("\nnhap chuoi str1: ");
+  fgets(str1,30,stdin);
+  printf("\n chuoi s1 sau khi nhap la: %s", str1);
+  them(str1, 2 ,'t');
+  printf("\n chuoi sau khi xoa: %s", str1);
+  getch();
+  return 0;
+  }
