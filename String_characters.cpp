@@ -91,3 +91,20 @@ int main(){
   getch();
   return 0;
 }
+=========================================================
+▶️hàm sao chép chuỗi strcpy()
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+int main(){
+  char s1[30];
+  char s2[30];
+  fflush(stdin); //xoá bộ nhớ đệm
+  printf("\nnhap chuoi s1: ");
+  fgets(s1,30,stdin);
+  printf("\n chuoi s1 sau khi nhap la: %s", s1);
+  strcpy(s2,s1);
+  printf("\n chuoi s2 sau khi sao chep la: %s", s2);
+  getch();
+  return 0;
+}
