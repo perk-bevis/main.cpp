@@ -236,3 +236,20 @@ int main(){
   getch();
   return 0;
   }
+==============
+▶️strdup()
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+#include<stdlib.h>
+
+int main(){
+  char str1[30];
+  printf("\nnhap chuoi str1: ");
+  fgets(str1,30,stdin);
+  printf("\n chuoi s1 sau khi nhap la: %s", str1);
+  char *str2 = strdup(str1);
+  printf("\n chuoi s2 sau khi nhap la: %s", str2);
+  getch();
+  return 0;
+}
