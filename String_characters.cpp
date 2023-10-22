@@ -29,3 +29,18 @@ int main(){
   getch();
   return 0;
 }
+----------------------------------------------------
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+
+int main(){
+  char hoten[30];
+  fflush(stdin); //xoá bộ nhớ đệm
+  printf("\n nhap chuoi: ");
+  fgets(hoten,30,stdin);
+  //%d là bởi vì hàm này xuất ra độ dài chuỗi mà độ dài chuỗi là sn =%d
+  printf("\ndo dai chuoi: %d", strlen(hoten));
+  getch();
+  return 0;
+  }
