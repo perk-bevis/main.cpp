@@ -46,7 +46,9 @@ int main(){
   getch();
   return 0;
 }
-🔴cách 2: tự xây dựng hàm strlen() dùng while
+▶️cách 2: tự xây dựng hàm strlen() 
+🔴dùng while lặp vo tận vì ko biết điểm dừng
+
 #include<stdio.h>
 #include<conio.h>
 #include<string.h>
@@ -57,6 +59,27 @@ int tinh_do_dai_chuoi(char s[]){
       return i;
     }
     i++;
+  }
+}
+int main(){
+  char hoten[30];
+  fflush(stdin); //xoá bộ nhớ đệm
+  printf("\n nhap ho va ten: ");
+  fgets(hoten,30,stdin);
+  printf("\ndo dai chuoi: %d", tinh_do_dai_chuoi(hoten));
+  getch();
+  return 0;
+}
+
+🔴dùng for
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+int tinh_do_dai_chuoi(char s[]){
+  for(int i=0; ;i++){
+    if(s[i]== '\0'){
+      return i;
+    }
   }
 }
 int main(){
