@@ -254,3 +254,28 @@ int main(){
   getch();
   return 0;
 }
+🚩🔴 tự xây lại hàm strdup() 🔴🚩
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+#include<stdlib.h>
+char *strdup(char str1[]){
+  // cấp phát 1 vùng nhớ cho chuỗi str2 sao chép các kí tự của chuỗi str1 sang
+  char *str2 = (char *)malloc(strlen(str1)+1);
+  for(int i = 0;i < strlen(str1);i++){
+    str2[i]=str1[i];
+  }
+  str2[strlen(str1)] = '\0';
+  return str2;
+  free(str2);
+}
+int main(){
+  char str1[30];
+  printf("\nnhap chuoi str1: ");
+  fgets(str1,30,stdin);
+  printf("\n chuoi s1 sau khi nhap la: %s", str1);
+  char *str2= strdup(str1);
+  printf("\n chuoi s2 sau khi nhap la: %s", str2);
+  getch();
+  return 0;
+}
