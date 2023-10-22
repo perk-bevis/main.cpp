@@ -185,3 +185,32 @@ int main(){
   getch();
   return 0;
   }
+-----------------------------------------------------
+hàm thêm vào vị trí bất kì trong chuỗi kí tự
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+
+void them(char s[], int vt ,int x){
+  //b1 dời 
+  int n = strlen(s);
+  for (int i = n; i > vt; i--) {
+    s[i] = s[i - 1];
+  }
+    //b2: chèn
+  s[vt] = x;
+  //b3 tăng  
+  s[n++];
+}
+int main(){
+  char str1[30];
+  printf("\nnhap chuoi str1: ");
+  fgets(str1,30,stdin);
+  printf("\n chuoi s1 sau khi nhap la: %s", str1);
+  them(str1, 2 ,'t');
+  printf("\n chuoi sau khi xoa: %s", str1);
+  getch();
+  return 0;
+}
+------------------
+🩸🩸🩸🩸🩸
