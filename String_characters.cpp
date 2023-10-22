@@ -121,7 +121,7 @@ void sao_chep_chuoi(char s2[], char s1[]){
   for(int i = 0; i< strlen(s1);i++){
     s2[i]= s1[i];
   }
-  s2[strlen(s1)] = '\0';
+  s2[strlen(s1)] = '\0';// thêm kí tự \0 vào cuối chuỗi
 }
 int main(){
   char s1[30];
