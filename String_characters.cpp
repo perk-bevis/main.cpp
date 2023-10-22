@@ -160,3 +160,28 @@ int main(){
   getch();
   return 0;
 }
+---------------------------------
+🩸🩸🩸
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+
+void xoa(char s[], int vitrixoa) {
+  //b1 dời
+  int n = strlen(s);
+  for (int i = vitrixoa + 1; i<n ; i++) {
+    s[i-1] = s[i];
+  }
+  s[strlen(s)-1]= '\0';
+}
+int main(){
+  char str1[30];
+  fflush(stdin); //xoá bộ nhớ đệm
+  printf("\nnhap chuoi str1: ");
+  fgets(str1,30,stdin);
+  printf("\n chuoi s1 sau khi nhap la: %s", str1);
+  xoa(str1, 2);
+  printf("\n chuoi sau khi xoa: %s", str1);
+  getch();
+  return 0;
+  }
