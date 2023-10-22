@@ -31,6 +31,7 @@ int main(){
 }
 ----------------------------------------------------
 ▶️ ĐỘ DÀI CHUỖI strlen(<chuỗi cần lấy độ dài>)
+🎗️⭕Cách 1:
 #include<stdio.h>
 #include<conio.h>
 #include<string.h>
@@ -38,10 +39,32 @@ int main(){
 int main(){
   char hoten[30];
   fflush(stdin); //xoá bộ nhớ đệm
-  printf("\n nhap chuoi: ");
+  printf("\n nhap ho va ten: ");
   fgets(hoten,30,stdin);
   //%d là bởi vì hàm này xuất ra độ dài chuỗi mà độ dài chuỗi là sn =%d
   printf("\ndo dai chuoi: %d", strlen(hoten));
   getch();
   return 0;
+}
+🔴cách 2: tự xây dựng hàm strlen() dùng while
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+int tinh_do_dai_chuoi(char s[]){
+  int i= 0;
+  while(true){
+    if(s[i]== '\0'){
+      return i;
+    }
+    i++;
   }
+}
+int main(){
+  char hoten[30];
+  fflush(stdin); //xoá bộ nhớ đệm
+  printf("\n nhap ho va ten: ");
+  fgets(hoten,30,stdin);
+  printf("\ndo dai chuoi: %d", tinh_do_dai_chuoi(hoten));
+  getch();
+  return 0;
+}
