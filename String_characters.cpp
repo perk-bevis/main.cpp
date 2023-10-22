@@ -30,6 +30,7 @@ int main(){
   return 0;
 }
 ----------------------------------------------------
+▶️ ĐỘ DÀI CHUỖI strlen(<chuỗi cần lấy độ dài>)
 #include<stdio.h>
 #include<conio.h>
 #include<string.h>
