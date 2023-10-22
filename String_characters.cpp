@@ -109,3 +109,29 @@ int main(){
   getch();
   return 0;
 }
+____________tự xây dựng lại hàm strcpy()_______________
+kích thước chuỗi chứa kí tự \0
+độ dài chuỗi ko chứa kí tự \0
+
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+
+void sao_chep_chuoi(char s2[], char s1[]){
+  for(int i = 0; i< strlen(s1);i++){
+    s2[i]= s1[i];
+  }
+  s2[strlen(s1)] = '\0';
+}
+int main(){
+  char s1[30];
+  char s2[30];
+  fflush(stdin); //xoá bộ nhớ đệm
+  printf("\nnhap chuoi s1: ");
+  fgets(s1,30,stdin);
+  printf("\n chuoi s1 sau khi nhap la: %s", s1);
+  sao_chep_chuoi(s2,s1);
+  printf("\n chuoi s2 sau khi sao chep la: %s", s2);
+  getch();
+  return 0;
+}
