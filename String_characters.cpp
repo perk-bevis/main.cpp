@@ -250,6 +250,7 @@ int main(){
   printf("\n chuoi s1 sau khi nhap la: %s", str1);
   char *str2 = strdup(str1);
   printf("\n chuoi s2 sau khi nhap la: %s", str2);
+  free(str2);
   getch();
   return 0;
 }
