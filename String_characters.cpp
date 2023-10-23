@@ -325,3 +325,4 @@ int main(){
 }
 ▶️ strrev() hàm đảo chuỗi
 ▶️ strcmp() so sánh hai chuỗi có phân biệt kí tự hoa và kí tự thường
+▶️ stricmp() so sánh hai chuỗi không phân biệt kí tự hoa và kí tự thường
