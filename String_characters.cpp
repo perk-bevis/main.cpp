@@ -279,3 +279,25 @@ int main(){
   getch();
   return 0;
 }
+🔴🔴🔴hàm chuyển kí tự in hoa thành in thường 🔴🔴🔴
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+
+void strlwr(char str1[]){
+  for(int i = 0; i<strlen(str1);i++){
+    if(str1[i] >= 65 && str1[i] <= 90){
+      str1[i] += 32;
+    }
+  }
+}
+int main(){
+  char str1[30];
+  printf("\nnhap str1: ");
+  fgets(str1,30,stdin);
+  printf("\n  sau khi nhap la: %s", str1);
+  strlwr(str1);
+  printf("\n chuoi in thuong: %s",str1);
+  getch();
+  return 0;
+}
