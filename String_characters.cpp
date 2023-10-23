@@ -324,4 +324,4 @@ int main(){
   return 0;
 }
 ▶️ strrev() hàm đảo chuỗi
-▶️ strcmp() 
+▶️ strcmp() so sánh hai chuỗi có phân biệt kí tự hoa và kí tự thường
