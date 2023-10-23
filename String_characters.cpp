@@ -323,3 +323,5 @@ int main(){
   getch();
   return 0;
 }
+▶️ strrev() hàm đảo chuỗi
+▶️ strcmp() 
