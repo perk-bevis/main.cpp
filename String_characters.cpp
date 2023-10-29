@@ -324,5 +324,31 @@ int main(){
   return 0;
 }
 ▶️ strrev() hàm đảo chuỗi
+🔴code
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+
+void hoan_vi(char &x,char &y){
+  char temp = x;
+  x = y;
+  y = temp;
+}
+void strrev(char str1[]){
+  int dodai = strlen(str1);
+  for(int i = 0; i< (dodai / 2);i++){
+    hoan_vi(str1[i],str1[dodai -i -1]);
+  }
+}
+int main(){
+  char str1[100];
+  printf("\nnhap chuoi str1: ");
+  fgets(str1,100,stdin);
+  printf("\n  chuoi nhan duoc la: %s", str1);
+  strrev(str1);
+  printf("\n chuoi sau khi dao nguoc: %s",str1);
+  getch();
+  return 0;
+}
 ▶️ strcmp() so sánh hai chuỗi có phân biệt kí tự hoa và kí tự thường
 ▶️ stricmp() so sánh hai chuỗi không phân biệt kí tự hoa và kí tự thường
