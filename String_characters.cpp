@@ -351,4 +351,39 @@ int main(){
   return 0;
 }
 ▶️ strcmp() so sánh hai chuỗi có phân biệt kí tự hoa và kí tự thường
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+
+int strcmp(char s1[],char s2[]){
+  int dodai_min = strlen(s1) > strlen(s2)? strlen(s1) : strlen(s2);
+  for(int i = 0;i < dodai_min;i++){
+    if(s1[i]> s2[i]){
+      return 1;
+    }
+    else if(s1[i] < s2[i]){
+      return -1;
+    }
+  }
+  if(strlen(s1) > strlen(s2)){
+    return 1;
+  } else if(strlen(s1)< strlen(s2)){
+    return -1;
+  } else{
+    return 0;
+  }
+}
+int main(){
+  char s[] = "a";
+  char s1[] = "LAP TRINH";
+  if(strcmp(s,s1)>0){
+    printf("chuoi s lon hon chuoi s1");
+  }else if(strcmp(s,s1)<0){
+    printf("chuoi s1 lon hon chuoi s");
+  }else{
+    printf("chuoi s1 bang chuoi s");
+  }
+  getch();
+  return 0;
+}
 ▶️ stricmp() so sánh hai chuỗi không phân biệt kí tự hoa và kí tự thường
