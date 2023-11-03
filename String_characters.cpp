@@ -421,3 +421,51 @@ int main(){
   printf("\n chuoi temp nhan duoc: %s", temp);
   getch();
 }
+------------------------------
+xoá khoảng trắng đầu và cuối chuỗi 
+🌺🌺code💐💐
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+// hàm xoá 1 kí tự tại 1 vị trí bất kì trong chuỗi - mảng kí tự
+void xoa(char s[],int vitrixoa){
+  int n =strlen(s);
+  for(int i = vitrixoa +1;i<n;i++){
+    s[i-1]= s[i];
+  }
+  s[n--]= '\0';
+}
+//hàm xoá tất cả kí tự khoảng trắng ở đầu chuỗi
+void xoa_dauchuoi(char s[]){
+    while(true){
+    if(s[0] == ' '){
+      xoa(s,0);
+    }
+    else{
+      break;
+    }
+  }
+}
+//hàm xoá tất cả kí tự khoảng trắng ở cuoi chuỗi
+void xoa_cuoichuoi(char s[]){
+    while(true){
+    if(s[strlen(s)-1] == ' '){
+      xoa(s,strlen(s)-1);
+    }
+    else{
+      break;
+    }
+  }
+}
+int main(){
+  char s[30];
+  printf("\n nhap chuoi: ");
+  fgets(s,30,stdin);
+  printf("\n chuoi nhan duoc: %s",s);
+  printf("\n do dai chuoi: %d",strlen(s));
+  xoa_dauchuoi(s);
+  xoa_cuoichuoi(s);
+  printf("\n chuoi sau khi xu li theo yc: %s",s);
+  printf("\n do dai chuoi khi xu li: %d",strlen(s));
+  getch();
+}
