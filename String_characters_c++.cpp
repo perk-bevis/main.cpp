@@ -1,1 +1,1 @@
-
+//chuỗi trong c++
