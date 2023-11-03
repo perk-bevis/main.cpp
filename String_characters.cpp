@@ -387,3 +387,7 @@ int main(){
   return 0;
 }
 ▶️ stricmp() so sánh hai chuỗi không phân biệt kí tự hoa và kí tự thường
+______________
+nhập vào 1 chuỗi kí tự in thường từ bàn phím. bỏ hết tất cả các kí tự x(x là kí tự in 
+thường nhập từ bàn phím) đó vào chuỗi temp
+chú ý ko đc dùng hàm có sẵn
