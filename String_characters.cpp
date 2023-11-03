@@ -469,3 +469,32 @@ int main(){
   printf("\n do dai chuoi khi xu li: %d",strlen(s));
   getch();
 }
+=============
+💐code
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+#include <math.h>
+//hàm chuyển đổi chuỗi số thành số 
+
+int chuyen_doi(char s[]){
+  int sum = 0;
+  int mu =0;
+  //duyệt từ cuối chuỗi về đầu chuỗi
+  for(int i = strlen(s)-2;i>=0;i--){
+    if(s[i] != '\n'){
+      sum =sum+ (s[i] - 48)*pow(10,mu);
+    }
+    mu++;
+  }
+  return sum;
+}
+
+int main(){
+  char s[50];
+  printf("\n nhap chuoi so: ");
+  fgets(s,50,stdin);
+  printf("\n chuoi so vua nhap: %s",s);
+  int ketqua=chuyen_doi(s);
+  printf("\n ket qua sn sau khi chuyen: %d",ketqua);
+}
