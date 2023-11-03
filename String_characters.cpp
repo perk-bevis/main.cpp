@@ -391,3 +391,33 @@ ______________
 nhập vào 1 chuỗi kí tự in thường từ bàn phím. bỏ hết tất cả các kí tự x(x là kí tự in 
 thường nhập từ bàn phím) đó vào chuỗi temp
 chú ý ko đc dùng hàm có sẵn
+🎈🎈 code:
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+
+void tim_kiem(char str[],char temp[], char x){
+  int dem = 0;
+  for(int i = 0; i< strlen(str);i++){
+    if(str[i]==x){
+      temp[dem]= str[i];
+      dem++;
+    }
+  }
+  temp[dem]= '\0';
+}
+
+int main(){
+  char str[30];
+  fflush(stdin);
+  printf("\n nhap chuoi: ");
+  fgets(str,30,stdin);
+  char x;
+  printf("\n nhap ki tu x: ");
+  scanf("%c",&x);
+  
+  char temp[30];
+  tim_kiem(str,temp,x);
+  printf("\n chuoi temp nhan duoc: %s", temp);
+  getch();
+}
