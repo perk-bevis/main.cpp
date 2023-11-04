@@ -403,7 +403,9 @@ int main() {
     ds.n=0;
     MENU(ds);
     //hàm giải phóng vừng nhớ cho mảng 1 chiều cho  con trỏ sinh viên
-    delete[] ds.ds_sv;
+    for(int i=0;i<ds.n;i++){
+      delete ds.ds_sv[i];
+    }
     system("pause");
     return 0;
 }
