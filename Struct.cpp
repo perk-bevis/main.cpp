@@ -374,7 +374,7 @@ void Xuat_Danh_sach_Sinh_Vien(DANHSACH ds){
 void MENU(DANHSACH &ds){
   int luachon;
   while(true){
-    
+    system("cls");
     cout << "\n\n\t\t======== QUẢN LÝ SINH VIÊN ========\n";
     cout<< "\n\t1. thêm thông tin sinh viên";
     cout<< "\n\t2. xuất danh sách sinh viên";
@@ -404,6 +404,7 @@ int main() {
     MENU(ds);
     //hàm giải phóng vừng nhớ cho mảng 1 chiều cho  con trỏ sinh viên
     delete[] ds.ds_sv;
+    system("pause");
     return 0;
 }
 1) viết hàm nhập danh sách thông tin sinh viên 
