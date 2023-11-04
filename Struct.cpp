@@ -290,7 +290,155 @@ biết rằng 1 sinh viên gồm những thông tin như sau:
 -) điểm kĩ thuật lập trình: kiểu số thực
 -) điểm toán rời rạc: kiểu số thực 
 -) điểm CTDL&GT:kiểu số thực
+code
+#include <iostream>
+#include <string>
+#include <conio.h>
+using namespace std;
 
+struct sinhvien{
+  string hoten;
+  string maso;
+  float diem_KTLT;
+  float diem_TRR;
+  float diem_CTDL_GT;
+};
+typedef struct sinhvien SINHVIEN;
+void Nhap_Thong_Tin(SINHVIEN &x){
+    while(getchar() != '\n');
+    // bắt điều kiện nhập mã số
+    do{
+      cout << "Nhập mã số sinh viên: ";
+      getline(cin, x.maso);
+      if(x.maso.length()> 20){
+        cout<< "\n\t do dai ko hop le: ";
+      }
+    }while(x.maso.length()> 20);
+
+   //bắt điều kiện nhập họ tên
+   do{
+     cout << "\nNhập họ tên sinh viên: ";
+     getline(cin, x.hoten);
+     if(x.hoten.length()>30){
+       cout<< "\n\t do dai ko hop le: ";
+     }
+   }while(x.hoten.length()>30);
+   // bắt điều kiện cho điểm
+   do{
+     cout << "Nhập điểm Kĩ thuật lập trình: ";
+     cin >> x.diem_KTLT;
+     if(x.diem_KTLT <0 || x.diem_KTLT > 10){
+       cout <<"\n\t điểm số không hợp lệ;";
+     }
+   }while(x.diem_KTLT <0 || x.diem_KTLT > 10);
+   
+   do{
+     cout << "Nhập điểm toán rời rạc: ";
+     cin >> x.diem_TRR;
+     if(x.diem_TRR <0 || x.diem_TRR > 10){
+       cout <<"\n\t điểm số không hợp lệ;";
+     }
+   }while(x.diem_TRR <0 || x.diem_TRR > 10);
+    
+   do{
+     cout << "Nhập điểm cấu trúc dữ liệu và giải thuật: ";
+     cin >> x.diem_CTDL_GT;
+     if(x.diem_CTDL_GT <0 || x.diem_CTDL_GT > 10){
+       cout <<"\n\t điểm số không hợp lệ;";
+     }
+   }while(x.diem_CTDL_GT <0 || x.diem_CTDL_GT > 10);
+}
+void Xuat_Thong_Tin(SINHVIEN x){
+  cout <<"\n mã số sinh viên: "<< x.maso;
+  cout <<"\n họ tên sinh viên: "<< x.hoten;
+  cout <<"\n điểm kĩ thuật lập trình: "<< x.diem_KTLT;
+  cout <<"\n điểm toán rời rạc: "<<x.diem_TRR;
+  cout <<"\n điểm CTDL&GT: "<<x.diem_CTDL_GT;
+}
+//khai báo cấu trúc lưu trữ danh sách sinh viên
+struct danhsach{
+  SINHVIEN *ds_sv[100];//khai báo mảng 1 chiều các con trỏ sinh viên
+  int n;
+};
+typedef struct danhsach DANHSACH;
+//hàm xuất danh sách sinh viên
+void Xuat_Danh_sach_Sinh_Vien(DANHSACH ds){
+  for(int i=0;i<ds.n;i++){
+    cout << "\n\n\t\t thông tin sinh viên thu" << i+1 << endl;
+    Xuat_Thong_Tin(*ds.ds_sv[i]);
+  }
+}
+
+
+//hàm menu quản lý danh sách sinh viên 
+void hhhh(DANHSACH &ds){
+  int luachon;
+  while(true){
+    
+    cout << "\n\n\t\t======== QUẢN LÝ SINH VIÊN ========\n";
+    cout<< "\n\t1. thêm thông tin sinh viên";
+    cout<< "\n\t2. xuất danh sách sinh viên";
+    cout << "\n\t0. kết thúc";
+    cout << "\n\n\t\t==============END ========\n";
+    
+    cout << "\n nhập lựa chọn";
+    cin >> luachon;
+    if(luachon == 1){
+      SINHVIEN *x = new SINHVIEN;
+      cout << "\n\n\t\t nhập thông tin sinh viên\n";
+      Nhap_Thong_Tin(*x);
+      ds.ds_sv[ds.n] = x;// thêm sv x vào mảng 1 chiều các con trỏ sinh viên
+      ds.n++;
+    }else if(luachon == 2){
+      cout<< "\n\n\t\t danh sách sinh viên\n";
+      Xuat_Danh_sach_Sinh_Vien(ds);
+      system("pause");
+    }else{
+      break;
+    }
+  }
+}
+
+//...
+
+void MENU(DANHSACH &ds){
+  int luachon;
+  while(true){
+    cout << "\n\n\t\t======== QUẢN LÝ SINH VIÊN ========\n";
+    cout<< "\n\t1. thêm thông tin sinh viên";
+    cout<< "\n\t2. xuất danh sách sinh viên";
+    cout << "\n\t0. kết thúc";
+    cout << "\n\n\t\t==============END ========\n";
+    
+    cout << "\n nhập lựa chọn";
+    cin >> luachon;
+
+    if(luachon == 1){
+      SINHVIEN *x = new SINHVIEN; // Thay đổi ở đây: không cần con trỏ
+      cout << "\n\n\t\t nhập thông tin sinh viên\n";
+      Nhap_Thong_Tin(*x); // Sửa ở đây: truyền đối tượng, không phải con trỏ
+      ds.ds_sv[ds.n] = x;
+      ds.n++;
+    } else if(luachon == 2){
+      cout<< "\n\n\t\t danh sách sinh viên\n";
+      Xuat_Danh_sach_Sinh_Vien(ds);
+      system("pause");
+    } else {
+      break;
+    }
+  }
+}
+
+//...
+
+int main() {
+    DANHSACH ds;
+    ds.n=0;
+    MENU(ds);
+    //hàm giải phóng vừng nhớ cho mảng 1 chiều cho  con trỏ sinh viên
+    delete[] ds.ds_sv;
+    return 0;
+}
 1) viết hàm nhập danh sách thông tin sinh viên 
 2) viết hàm xuất danh sách thông tin sinh viên
 3)xếp loại sinh viên dựa vào điểm trung bình 
