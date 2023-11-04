@@ -371,7 +371,7 @@ void Xuat_Danh_sach_Sinh_Vien(DANHSACH ds){
 
 
 //hàm menu quản lý danh sách sinh viên 
-void hhhh(DANHSACH &ds){
+void MENU(DANHSACH &ds){
   int luachon;
   while(true){
     
@@ -398,39 +398,6 @@ void hhhh(DANHSACH &ds){
     }
   }
 }
-
-//...
-
-void MENU(DANHSACH &ds){
-  int luachon;
-  while(true){
-    cout << "\n\n\t\t======== QUẢN LÝ SINH VIÊN ========\n";
-    cout<< "\n\t1. thêm thông tin sinh viên";
-    cout<< "\n\t2. xuất danh sách sinh viên";
-    cout << "\n\t0. kết thúc";
-    cout << "\n\n\t\t==============END ========\n";
-    
-    cout << "\n nhập lựa chọn";
-    cin >> luachon;
-
-    if(luachon == 1){
-      SINHVIEN *x = new SINHVIEN; // Thay đổi ở đây: không cần con trỏ
-      cout << "\n\n\t\t nhập thông tin sinh viên\n";
-      Nhap_Thong_Tin(*x); // Sửa ở đây: truyền đối tượng, không phải con trỏ
-      ds.ds_sv[ds.n] = x;
-      ds.n++;
-    } else if(luachon == 2){
-      cout<< "\n\n\t\t danh sách sinh viên\n";
-      Xuat_Danh_sach_Sinh_Vien(ds);
-      system("pause");
-    } else {
-      break;
-    }
-  }
-}
-
-//...
-
 int main() {
     DANHSACH ds;
     ds.n=0;
