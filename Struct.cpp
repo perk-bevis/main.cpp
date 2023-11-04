@@ -276,3 +276,30 @@ int main() {
     cout<< "\n\n\t\t Độ dài cạnh BC: "<<Tinh_Do_Dai_Canh(tg.B,tg.C);
     return 0;
 }
+//=====BÀI TẬP ==========
+BÀI 2:khai báo cấu trúc 1 phân số biết rằng 1 phân số luôn luôn có tử số và mẫu số
+1) nhập danh sách các phân số
+2) xuất danh sách các phân số
+3) rút gọn các phân số
+4) tìm phân số lớn nhất
+5) tính tổng tất cả các phân số
+BÀI 3:hãy khai báo kiểu dữ liệu để biểu diễn thông tin của một sinh viên (SinhViên)
+biết rằng 1 sinh viên gồm những thông tin như sau:
+-) mã số sinh viên:chuỗi tối đa 20 kí tự
+-) họ tên sinh viên:chuỗi tối đa 30 kí tự
+-) điểm kĩ thuật lập trình: kiểu số thực
+-) điểm toán rời rạc: kiểu số thực 
+-) điểm CTDL&GT:kiểu số thực
+
+1) viết hàm nhập danh sách thông tin sinh viên 
+2) viết hàm xuất danh sách thông tin sinh viên
+3)xếp loại sinh viên dựa vào điểm trung bình 
+-) xuất sắc: >9.8;
+-) giỏi: >=8
+-) khá: <8;
+-) trung bình : < 6.5;
+-) yếu: <4;
+4) sắp xếp danh sách sinh viên tăng dần theo điểm trung bình
+5) sắp xếp danh sách sinh viên giảm dần theo tên sinh viên
+gợi ý: sắp xếp theo thứ tự bảng mã ASCII
+substr();
