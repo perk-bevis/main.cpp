@@ -421,3 +421,17 @@ int main() {
 5) sắp xếp danh sách sinh viên giảm dần theo tên sinh viên
 gợi ý: sắp xếp theo thứ tự bảng mã ASCII
 substr();
+======================∆=========∆=================================
+🛑🛑THIẾT KẾ CHƯƠNG TRÌNH LƯU TRỮ THÔNG TIN SINH VIÊN CỦA 1 TRƯỜNG ĐẠI HỌC 
+BIẾT THÔNG TIN SINH VIÊN BAO GỒM:
+-) mã số
+-) họ tên 
+-) năm sinh
+-) điểm trung bình 
+1) khai báo cấu trúc sinh viên 
+2) nhập danh sách sinh viên 
+3) xuất danh sách sinh viên 
+4) tìm kiếm thông tin sinh viên dựa vào điểm
+5) thêm 1 sinh viên vào 1 vị trí bất kì
+6) xoá 1 sinh viên có mã bất kì
+7) sắp xếp sinh viên tăng dần theo điểm trung bình 
