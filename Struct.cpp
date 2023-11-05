@@ -433,5 +433,5 @@ BIẾT THÔNG TIN SINH VIÊN BAO GỒM:
 3) xuất danh sách sinh viên 
 4) tìm kiếm thông tin sinh viên dựa vào điểm
 5) thêm 1 sinh viên vào 1 vị trí bất kì
-6) xoá 1 sinh viên có mã bất kì
+6) xoá 1 sinh viên có điểm trung bình dưới 5
 7) sắp xếp sinh viên tăng dần theo điểm trung bình 
