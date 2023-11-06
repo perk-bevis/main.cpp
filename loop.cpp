@@ -491,3 +491,26 @@ int main() {
     i++;
   }
 }
+_________________
+🛑VẼ HÌNH 🛑🛑
+****** i = 1 6*
+***** i= 2 5*
+**** i=3 4*
+***i=4 3*
+**i=5 2*
+*i=6 1*
+code:
+#include <iostream>
+using namespace std;
+
+int main() {
+  int n =6;
+  for(int i = 1; i<= n; i++){
+    //số lượng kí tự ở dòng thứ i =n+1- chỉ số dòng
+     for(int j = 1;j<=n+1-i;j++){
+         cout << "*"; 
+     } 
+      cout << endl; 
+  }
+  return 0;
+}
