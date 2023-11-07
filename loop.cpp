@@ -10,11 +10,11 @@ int main() {
     int x; cin >> x;
     if(x > 0){
     	cout << "x la so duong\n"; 
-	} else if(x < 0){
-		cout << "x la so am\n"; 
-	} else {
-		cout << "x la so 0\n"; 
-	} 
+    } else if(x < 0){
+	cout << "x la so am\n"; 
+    } else {
+	cout << "x la so 0\n"; 
+    } 
     return 0;
 }
 Test2:
