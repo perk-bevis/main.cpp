@@ -3,7 +3,7 @@ input:
 1 2 3 4 6 8 12 24 
 output:
 8
-
+//kĩ thuật đếm
 ⭕⭕⭕⭕⭕
 #include <iostream>
 using namespace std;
