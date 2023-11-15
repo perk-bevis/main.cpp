@@ -1,3 +1,10 @@
+input:
+24
+1 2 3 4 6 8 12 24 
+output:
+8
+
+⭕⭕⭕⭕⭕
 #include <iostream>
 using namespace std;
 
