@@ -1,3 +1,4 @@
+Bài 21: Tính tổng tất cả các “ ước số” của số nguyên dương n
 #include <iostream>
 using namespace std;
 
