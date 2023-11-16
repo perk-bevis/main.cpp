@@ -1,3 +1,7 @@
+----------
+Bài 28: Cho số nguyên dương n. 
+Tính tổng các ước số nhỏ hơn chính nó
+----------
 #include <iostream>
 using namespace std;
 
