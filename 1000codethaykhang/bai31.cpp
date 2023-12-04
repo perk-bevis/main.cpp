@@ -1,4 +1,4 @@
-
+🔴ko dùng hàm
 #include <iostream>
 using namespace std;
 
