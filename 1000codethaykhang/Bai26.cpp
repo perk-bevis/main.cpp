@@ -1,3 +1,6 @@
+Bài 26: Tính tích tất cả các “ước số lẻ” 
+của số nguyên dương n
+________
 #include <iostream>
 using namespace std;
 
