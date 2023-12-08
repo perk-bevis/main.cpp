@@ -1,3 +1,6 @@
+Bài 30: Cho số nguyên dương n. Kiểm tra xem n 
+có phải là số hoàn thiện hay không
+___________________
 #include<iostream>
 using namespace std;
 
