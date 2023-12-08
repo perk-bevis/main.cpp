@@ -1,3 +1,5 @@
+Bài 31: Cho số nguyên dương n. Kiểm tra xem n có phải là số nguyên tố hay không
+______________
 🔴ko dùng hàm
 #include <iostream>
 using namespace std;
