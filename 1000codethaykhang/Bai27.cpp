@@ -1,3 +1,6 @@
+Bài 27: Đếm số lượng “ước số chẵn” 
+của số nguyên dương n
+_________________________
 #include <iostream>
 using namespace std;
 
