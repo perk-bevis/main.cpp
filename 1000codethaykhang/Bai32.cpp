@@ -1,3 +1,5 @@
+Bài 32: Cho số nguyên dương n. Kiểm tra xem n có phải là số chính phương hay không
+___________________
 #include <iostream>
 using namespace std;
 
