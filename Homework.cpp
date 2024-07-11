@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(){
- float soDien, tienDien;
+ int soDien, tienDien;
  int bac1=5,bac2=7,bac3=10,bac4=15,bac5=20;
  printf("Nhap vao so dien cua ban (kW): ");
  scanf("%f",&soDien);
