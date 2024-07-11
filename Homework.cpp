@@ -7,8 +7,8 @@ int main() {
     cout << "Nhap vao so dien cua ban (kW): ";
     cin >> soDien;
 
-    if (soDien < 0) {
-        cout << "\nVui long nhap lai So Dien\nSo dien khong duoc nho hon 0\n";
+    if (soDien <= 0) {
+        cout << "\nVui long nhap lai So Dien\nSo dien khong duoc nho hon hoac bang 0\n";
     } else if (soDien <= 100) {
         tienDien = soDien * bac1;
         cout << "\nban da dung dien trong khoang 0 - 100 kW so tien ban phai tra la: " << tienDien << endl;
