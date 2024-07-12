@@ -17,13 +17,13 @@ int main() {
         cout << "\nban da dung dien trong khoang 101 - 150 kW so tien ban phai tra la: " << tienDien << endl;
     } else if (soDien <= 200) {
         tienDien = 100 * bac1 + (50 * bac2) + ((soDien - 150) * bac3);
-        cout << "\nban da dung dien trong khoang 151 - 200 kWh so tien ban phai tra la: " << tienDien << endl;
+        cout << "\nban da dung dien trong khoang 151 - 200 kW so tien ban phai tra la: " << tienDien << endl;
     } else if (soDien <= 300) {
         tienDien = 100 * bac1 + (50 * bac2) + (50 * bac3) + ((soDien - 200) * bac4);
-        cout << "\nban da dung dien trong khoang 201 - 300 kWh so tien ban phai tra la: " << tienDien << endl;
+        cout << "\nban da dung dien trong khoang 201 - 300 kW so tien ban phai tra la: " << tienDien << endl;
     } else if (soDien > 300) {
         tienDien = 100 * bac1 + (50 * bac2) + (50 * bac3) + (100 * bac4) + ((soDien - 300) * bac5);
-        cout << "\nban da dung dien tren 300 kWh so tien ban phai tra la: " << tienDien << endl;
+        cout << "\nban da dung dien tren 300 kW so tien ban phai tra la: " << tienDien << endl;
     }
 
     return 0;
