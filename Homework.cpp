@@ -1,3 +1,19 @@
+Đề: 15. Write a program to calculate electricity bills used during the month:
+
+From 1-100KW: $5/1KW
+
+From 101 - 150KW: $7/1KW
+
+From 151 - 200KW: $10/1KW
+
+From 201-300KW: $15/1KW
+
+From 300KW or more: $20/1KW
+
+For example: A household has an electricity consumption of 180KW, the electricity bill is
+
+Calculate as follows: 5*100+7*50+10*30=1150$
+🔴🔴code:
 #include <iostream>
 using namespace std;
 
