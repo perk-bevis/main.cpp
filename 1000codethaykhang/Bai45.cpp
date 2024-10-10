@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
     long n;
-    int number = 0;
+    int number = 1;
     do {
         cout << "\nNhap n: ";
         cin >> n;
