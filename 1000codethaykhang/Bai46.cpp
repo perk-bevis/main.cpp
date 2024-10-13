@@ -10,7 +10,7 @@ int main() {
         cin >> n;
     } while (n < 0 && cout << "\nLoi: n >= 0 !");
     for (long count = n; count > 0; ) {
-        if((count % 10)  %2 == 0){
+        if((count % 10)  %2 != 0){
           number++;
         }
         count /= 10;
