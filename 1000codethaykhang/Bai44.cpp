@@ -1,3 +1,4 @@
+Hãy tính tổnɡ các chữ số củɑ số nɡuyên dươnɡ n
 #include <iostream>
 using namespace std;
 
