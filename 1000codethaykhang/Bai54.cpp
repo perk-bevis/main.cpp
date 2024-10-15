@@ -21,7 +21,7 @@ int main() {
           dem ++;
         }
     }
-    cout << "\n So lớn nhất của số nguyên n la " << temp << " la " << min;
+    cout << "\n So nho nhat của số nguyên n la " << temp << " la " << min;
     cout << "\n số lượng So nhỏ nhất của số nguyên n la " << temp << " la " << dem;
 
     return 0;
