@@ -1,4 +1,13 @@
+Viết chương trình đếm số lượng chữ số của một số nguyên 
+n nhập từ bàn phím.
 
+Input
+Số nguyên n
+
+Giới hạn
+|n| <=10^1000
+Output
+Số lượng chữ số của số n
 #include <bits/stdc++.h>
 
 using namespace std;
