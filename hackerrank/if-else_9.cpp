@@ -1,28 +1,29 @@
-Định dạng đầu vào
+Input Format
 
-Bạn sẽ được cho hai số nguyên dương, a và b (với a nhỏ hơn hoặc bằng b), mỗi số nằm trên một dòng.
+Bạn sẽ được cung cấp hai số nguyên dương, a và b (a ≤ b), tách biệt bởi một dòng mới.
 
-Định dạng đầu ra
+Output Format
 
-Với mỗi số nguyên n trong đoạn từ a đến b (bao gồm cả a và b):
+Với mỗi số nguyên n trong khoảng đóng [a, b]:
 
-Nếu n nằm trong khoảng từ 1 đến 9, in ra tên tiếng Anh của nó (bằng chữ thường). Ví dụ: "one" cho 1, "two" cho 2, v.v.
+Nếu 1 ≤ n ≤ 9, in ra dạng chữ tiếng Anh của nó bằng chữ thường. Ví dụ: "one" cho 1, "two" cho 2, và cứ thế tiếp tục.
 
-Nếu n lớn hơn 9 và là số chẵn, in ra "even".
+Nếu n > 9 và là số chẵn, in "even".
 
-Nếu n lớn hơn 9 và là số lẻ, in ra "odd".
+Nếu n > 9 và là số lẻ, in "odd".
 
 
-Lưu ý: Đoạn từ a đến b là tập hợp các số nguyên x mà a nhỏ hơn hoặc bằng x và x nhỏ hơn hoặc bằng b, tức là các số từ a, a + 1, …, đến b.
+Ghi chú: [a, b] là tập hợp các số nguyên x thỏa mãn a ≤ x ≤ b.
 
-Ví dụ đầu vào
+Sample Input
 
 8
 11
 
-Ví dụ đầu ra
+Sample Output
 
 eight
 nine
 even
 odd
+code:
