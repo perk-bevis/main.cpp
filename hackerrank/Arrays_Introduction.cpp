@@ -1,16 +1,15 @@
-The first line of the input contains ,where  is the number of integers.The next line contains  space-separated integers.
+The first line of the input contains n ,where n is the number of integers.The next line contains n space-separated integers.
 
 Constraints
 
 1 <= n <= 1000
 1 <= a[i] <= 10000
 
-
-, where  is the  integer in the array.
+, where A[i] is the i^th integer in the array.
 
 Output Format
 
-Print the  integers of the array in the reverse order, space-separated on a single line.
+Print the n integers of the array in the reverse order, space-separated on a single line.
 
 Sample Input
 
