@@ -541,3 +541,15 @@ int main() {
   }
   return 0;
 }
+// liệt kê số chính phương k vượt quá n
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+using ll = long long;
+int main(){
+  ll n; cin >> n;
+  for(int i = 1 ; i<= sqrt(n); i++){
+    cout << 1ll*i*i << " ";
+  }
+}
