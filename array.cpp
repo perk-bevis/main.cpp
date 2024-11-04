@@ -1273,3 +1273,64 @@ void dich_phai(int a[], int n) {
 		n--;
 	}
 }
+//mảng 3 chiều
+#include <iostream>
+#include <cmath>
+#include <vector>
+using namespace std;
+
+int kiem_tra_so_nguyen_to(int n) {
+    for(int i = 2; i <= sqrt(n); i++) {
+        if(n % i == 0) {
+            return 0;
+        }
+    }
+    return n > 1;
+}
+
+void nhap_mang_3_chieu(int mang_3_chieu[][50][50], int n, int m, int p) {
+    for(int i = 1; i <= n; i++) {
+        for(int j = 1; j <= m; j++) {
+            for(int k = 1; k <= p; k++) {
+                cout << "Nhập phần tử tại [" << i << "][" << j << "][" << k << "]: ";
+                cin >> mang_3_chieu[i][j][k];
+            }
+        }
+    }
+}
+
+void in_mang_3_chieu_so_nt(int mang_3_chieu[][50][50], int n, int m, int p) {
+    for(int i = 1; i <= n; i++) {
+        cout << "Mặt " << i << ":\n";
+        vector<int> mang_chua_so_khong_nt;
+        for(int j = 1; j <= m; j++) {
+            for(int k = 1; k <= p; k++) {
+                if(kiem_tra_so_nguyen_to(mang_3_chieu[i][j][k])) {
+                    cout << mang_3_chieu[i][j][k] << " ";
+                } else {
+                    cout << "X ";
+                    mang_chua_so_khong_nt.push_back(mang_3_chieu[i][j][k]);
+                }
+            }
+            cout << endl;
+        }
+        cout << "Các số không nguyên tố là: ";
+        for(int i = 0; i < mang_chua_so_khong_nt.size(); i++) {
+            cout << mang_chua_so_khong_nt[i] << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main() {
+    cout << "Nhập số mặt, số dòng và số cột: ";
+    int n, m, p;
+    cin >> n >> m >> p;
+    int mang_3_chieu[50][50][50];
+    int mang_chua_so_khong_nt[50];
+    cout << "Nhập các phần tử mảng 3 chiều:\n";
+    nhap_mang_3_chieu(mang_3_chieu, n, m, p);
+    cout << "\nMảng số nguyên tố là:\n";
+    in_mang_3_chieu_so_nt(mang_3_chieu, n, m, p);
+    return 0;
+}
