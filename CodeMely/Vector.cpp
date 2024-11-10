@@ -126,4 +126,43 @@ int main() {
     for(int x : hop) cout << x << " ";
     return 0;
 }
+🔴
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    
+    int n;
+    cin >> n;
+    long long a[n];
+    
+    for(int i = 0; i < n; i++) {
+        int x;
+        cin >> x;
+        a[i] = 1LL * x * x;
+    }
+
+    sort(a, a + n);
+
+    for(int i = n - 1; i > 1; i--) {
+        int l = 0, r = i - 1;
+        
+        while(l < r) {
+            if(a[l] + a[r] == a[i]) {
+                cout << "YES\n";
+                return 0;
+            } else if(a[l] + a[r] < a[i]) {
+                ++l;
+            } else {
+                --r;
+            }
+        }
+    }
+
+    cout << "NO\n";
+    return 0;
+}
 
