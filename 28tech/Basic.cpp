@@ -10,7 +10,6 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> A[i];  
     }
-
     string tmp = "28tech";  
     int len = tmp.length(); 
     int j = 0;  
@@ -22,8 +21,6 @@ int main() {
            break;  
         }
     }
-
-    // In kết quả
     if (j == len) {
         cout << "28TECH" << endl;  
     } else {
