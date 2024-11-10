@@ -1,4 +1,4 @@
-⁸#include <iostream>
+⁸⁸#include <iostream>
 #include <vector>
 using namespace std;
 
@@ -222,4 +222,45 @@ int main() {
         }
     }
     cout << ans << " " << dem << endl;
+}
+🔴
+#include <bits/stdc++.h>
+using namespace std;
+
+bool nt(int n) {
+    for (int i = 2; i <= sqrt(n); i++) {
+        if (n % i == 0) return false;
+    }
+    return n > 1;
+}
+
+int main() {
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+    #endif
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    vector<int> v;
+    int x;
+    while (cin >> x) {
+        if (nt(x)) {
+            v.push_back(x);
+        }
+    }
+
+    int b[v.size()] = {0};
+    for (int i = 0; i < v.size(); i++) {
+        if (b[i] == 0) {
+            int dem = 1;
+            for (int j = i + 1; j < v.size(); j++) {
+                if (v[i] == v[j]) {
+                    ++dem;
+                    b[j] = 1;
+                }
+            }
+            cout << v[i] << " " << dem << endl;
+        }
+    }
 }
