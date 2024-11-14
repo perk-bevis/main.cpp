@@ -1,39 +1,30 @@
 #include <iostream>
-#include <cmath>  
-#include <vector> 
+#include <vector>
 
 using namespace std;
-
-bool nt(int n) {
-    if (n <= 1) return false;
-    for (int i = 2; i <= sqrt(n); i++) {
-        if (n % i == 0) return false;
-    }
-    return true;
-}
 
 int main() {
     int n;
     cin >> n;
-    vector<int> a(n); 
+    vector<int> a(n);
     for (int i = 0; i < n; i++) {
         cin >> a[i];
     }
 
-    int dem = 0, vt = 0, kiluc = 0;
-    for (int i = 0; i < n; i++) {
-        if (nt(a[i])) {
+    int dem = 1, vt = 0, kiluc = 1;
+    for (int i = 1; i < n; i++) {
+        if (a[i] > a[i - 1]) {
             dem++;
             if (dem > kiluc) {
                 kiluc = dem;
                 vt = i - dem + 1;
             }
         } else {
-            dem = 0;
-        } 
+            dem = 1;
+        }
     }
 
-    if (kiluc == 0) {
+    if (kiluc == 1) {
         cout << "NOT FOUND" << endl;
     } else {
         cout << kiluc << endl;
