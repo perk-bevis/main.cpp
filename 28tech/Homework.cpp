@@ -1,18 +1,47 @@
-include <iostream>
+#include <iostream>
+#include <cmath>  
+#include <vector> 
+
 using namespace std;
 
-int main() {
-int N; cin >> N;
-int A[N];
-for (int i = 0; i < N; ++i) {
-    cin >> A[i];
-}
-
-for (int i = 1; i < N - 1; ++i) {
-    if (A[i] < A[i - 1] && A[i] < A[i + 1]) {
-        cout << A[i] << " ";
+bool nt(int n) {
+    if (n <= 1) return false;
+    for (int i = 2; i <= sqrt(n); i++) {
+        if (n % i == 0) return false;
     }
+    return true;
 }
 
-return 0;
+int main() {
+    int n;
+    cin >> n;
+    vector<int> a(n); 
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int dem = 0, vt = 0, kiluc = 0;
+    for (int i = 0; i < n; i++) {
+        if (nt(a[i])) {
+            dem++;
+            if (dem > kiluc) {
+                kiluc = dem;
+                vt = i - dem + 1;
+            }
+        } else {
+            dem = 0;
+        } 
+    }
+
+    if (kiluc == 0) {
+        cout << "NOT FOUND" << endl;
+    } else {
+        cout << kiluc << endl;
+        for (int i = vt; i < vt + kiluc; i++) {
+            cout << a[i] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
 }
