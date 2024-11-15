@@ -1,24 +1,34 @@
 #include <iostream>
+#include <vector>
 #include <algorithm>
 using namespace std;
 
+int n, a[1000000];
+vector<int> b;
+
 int main() {
-    int n;
-    cin >> n;
-    int a[n + 1]; 
-    for (int i = 1; i <= n; ++i) {
-        cin >> a[i];
+    int t;
+    cin >> t;
+    int k = 1;
+    while (t--) {
+        cin >> n;
+        for (int i = 0; i < n; i++) 
+            cin >> a[i];
+        
+        int dem = 1, m = 0;
+        for (int i = 0; i < n - 1; i++) {
+            if (a[i] < a[i + 1]) 
+                dem++;
+            else {
+                m = max(m, dem);
+                dem = 1;
+            }
+        }
+        
+        m = max(m, dem); // Để xét chuỗi tăng dài nhất nếu nó ở cuối dãy
+        cout << "Test #" << k << " :" << endl;
+        k++;
+        cout << m << endl;
     }
-
-    int cur = 1;
-    int res = cur;
-
-    for (int i = 2; i <= n; ++i) {
-        if (a[i] > a[i - 1]) cur++;
-        else cur = 1;
-        res = max(res, cur);
-    }
-
-    cout << res;
     return 0;
 }
