@@ -9,7 +9,7 @@ void sieve() {
     }
     prime[0] = prime[1] = 0; // 0 và 1 không phải số nguyên tố
 
-    for (int i = 2; i * i <= 1000; i++) {
+    for (int i = 2; i * i <= 1000000; i++) {  // Lấy đến sqrt(1000000) thay vì 1000
         if (prime[i]) { // Nếu i là số nguyên tố
             for (int j = i * i; j <= 1000000; j += i) {
                 prime[j] = 0; // Loại bỏ các bội số của i
@@ -17,8 +17,6 @@ void sieve() {
         }
     }
 }
-
-
 
 int main() {
     sieve(); // Tạo mảng sàng số nguyên tố
@@ -29,8 +27,7 @@ int main() {
         cin >> a[i];
     }
 
-    sieve(); // Tạo mảng sàng số nguyên tố
-
+    // Biến lưu trữ kết quả
     int maxPrimeCount = 0;    // Số lượng số nguyên tố lớn nhất
     int maxSum = 0;           // Tổng lớn nhất của dãy con nguyên tố
     int currentCount = 0;     // Số lượng số nguyên tố hiện tại
@@ -62,22 +59,25 @@ int main() {
         }
     }
 
-    // Kiểm tra lần cuối sau khi duyệt xong mảng
+    // Kiểm tra lần cuối sau khi duyệt hết mảng
     if (currentCount > maxPrimeCount || 
         (currentCount == maxPrimeCount && currentSum > maxSum)) {
         maxPrimeCount = currentCount;
         maxSum = currentSum;
         bestStart = currentStart;
-        bestEnd = n - 1;
+        bestEnd = n - 1;  // Dãy con kết thúc tại cuối mảng
     }
 
-    // In kết quả
-    cout << maxPrimeCount << endl; // In số lượng số nguyên tố lớn nhất
-    for (int i = bestStart; i <= bestEnd; i++) {
-        cout << a[i] << " "; // In dãy con tốt nhất
+    // Nếu không có dãy con nguyên tố nào, bạn có thể in ra 0 hoặc thông báo thích hợp
+    if (maxPrimeCount == 0) {
+        cout << 0 << endl;
+    } else {
+        cout << maxPrimeCount << endl; // In số lượng số nguyên tố lớn nhất
+        for (int i = bestStart; i <= bestEnd; i++) {
+            cout << a[i] << " "; // In dãy con tốt nhất
+        }
+        cout << endl;
     }
-    cout << endl;
 
     return 0;
 }
-
