@@ -11,7 +11,7 @@ int main() {
     }
 
     int max = a[0];
-    for (int i = 1; i < n; i++) { // Duyệt từ phần tử thứ 2
+    for (int i = 1; i < n; i++) { 
         if (a[i] > max) {
             max = a[i];
         }
