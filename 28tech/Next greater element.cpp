@@ -10,18 +10,17 @@ int main() {
         cin >> a[i];
     }
 
-    int max = a[0];
-    for (int i = 1; i < n; i++) { 
-        if (a[i] > max) {
-            max = a[i];
-        }
-    }
-
     for (int i = 0; i < n; i++) {
-        if (a[i] == max) {
-            cout << max << endl;
-        } else {
-            cout << "-1" << endl;
+        bool check = false;
+        for (int j = i + 1; j < n; j++) {
+            if (a[j] > a[i]) {
+                check = true;
+                cout << a[j] << " ";
+                break;
+            }
+        }
+        if (!check) {
+            cout << -1 << " ";
         }
     }
 
