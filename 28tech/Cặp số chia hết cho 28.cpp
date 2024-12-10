@@ -3,14 +3,13 @@ using namespace std;
 
 int main() {
     int N;
-    cin >> N;  // Nhập số phần tử trong mảng
-    int A[N];   // Mảng A với N phần tử
-    int count[28] = {0};  // Mảng đếm số phần tử có phần dư từ 0 đến 27
+    cin >> N;  
+    int A[N]; 
+    int count[28] = {0}; 
 
-    // Nhập các phần tử vào mảng A và tính phần dư, đếm số phần tử có phần dư tương ứng
     for (int i = 0; i < N; i++) {
         cin >> A[i];
-        count[A[i] % 28]++;  // Đếm phần dư của A[i] khi chia cho 28
+        count[A[i] % 28]++;
     }
 
     long long result = 0;
