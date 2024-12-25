@@ -12,3 +12,38 @@ TROMVANG.INP
 TROMVANG.OUT 
 13
 Ràng buộc: 50% số test có các giá trị không quá 109
+code
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   int k,a,b,c,d,h,kh;
+   cin>>k>>a>>b>>c;
+   int t=a+b+c;
+   if(t<=k){
+      cout<<t; 
+  }else {
+       if(a+b<=k){
+         d=a+b;
+       }
+       if(a+c<=k){
+         h=a+c;
+       }
+       if(c+b<=k){
+         kh=b+c;
+       }
+       int q =0;
+       if(a <=k){
+         q = max(q,a);
+       }
+       if(b <=k){
+         q = max(q,b);
+       }
+       if(c <=k){
+         q = max(q,c);
+       }
+       cout<<max(d,max(h,kh));
+    }
+    return 0;
+}
