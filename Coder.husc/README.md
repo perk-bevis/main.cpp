@@ -1,2 +1,2 @@
-# Link contest
-https://coder.husc.edu.vn/problem/lhb018
+# Link HOME
+https://coder.husc.edu.vn/
