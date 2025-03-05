@@ -18,4 +18,9 @@ int main() {
     return 0;
 }
 
+vd
+5
+1 4 10 8 6
+output
+1 4 6 8 10
 https://www.hackerrank.com/challenges/vector-sort/problem?isFullScreen=false
