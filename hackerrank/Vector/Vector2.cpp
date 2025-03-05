@@ -22,4 +22,12 @@ int main() {
     return 0;
 }
 
+vd 
+6
+1 4 6 2 8 9
+2
+2 4
+output 
+3
+1 8 9
 https://www.hackerrank.com/challenges/vector-erase/problem?isFullScreen=true
