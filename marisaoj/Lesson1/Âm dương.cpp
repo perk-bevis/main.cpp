@@ -8,11 +8,11 @@ int main (){
 	for (int i=1;i<=n;i++){
 		cin >>a[i];
 	}
-	int m=1;
+	int m=1; //Chỉ số của mảng b,dùng để lưu các phần tử từ mảng a thỏa mãn điều kiện
 	for (int i=1;i<=n;i++){
 		if (a[i]<0){
-            b[m]=a[i];
-            m++;
+                   b[m]=a[i];
+                   m++;
 		}
         }
 	for (int i=1;i<=n;i++){
