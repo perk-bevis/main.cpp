@@ -10,7 +10,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> a[i];
     }
- 
+    //khởi tạo giá trị ban đầu bằng 0
     int maxDiff = 0;
     
     for (int i = 1; i < n; i++) {
