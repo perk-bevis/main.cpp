@@ -39,3 +39,54 @@ int main() {
 
     return 0;
 }
+cách 2
+#include <stdio.h>
+ 
+int main(void) {
+    int n; 
+    cin >> n; // 3
+    int a[n]; // 1 2 2
+    //tính tổng các phần tử trong mảng
+    int total = 0; // total = 5
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+        total += a[i];  
+    }
+    
+    int x, y;
+    cin>> x>>y;
+    
+   
+    if (x == y) {
+        cout <<"0";
+        return 0;
+    }
+    
+   //hoán vị
+    if (x > y) {
+        int temp = x;
+        x = y;
+        y = temp;
+    }
+    
+    //tính tổng
+    //x-1 = 1-1 =0
+    //y-1 = 3-1 =2
+    //i= 0 /0<2 /distance1 = 0
+    //i= 1 /1<2/ distance1 = 2
+    //i=2 /2<2 (sai)(loại)
+    int distance1 = 0;
+ 
+    for (int i = x - 1; i < y - 1; i++) {
+        distance1 += a[i];
+    }
+    
+    //distance2= 5 -2 =3
+    int distance2 = total - distance1;
+    
+    //result = (2<3) => result = 2
+    int result = (distance1 < distance2) ? distance1 : distance2;
+    cout << result;
+    
+    return 0;
+}
