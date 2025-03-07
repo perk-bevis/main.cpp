@@ -90,3 +90,46 @@ int main(void) {
     
     return 0;
 }
+cách 3
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int t1(int a[], int n, int x, int y){
+    int t=0;
+    for(int i=x; i<y; i++){
+        t+=a[i];
+    }
+    return t;
+}
+ 
+int t2(int a[], int n, int x, int y){
+    int t=0, i; 
+    for( i=y; i<=n; i++){
+        t+=a[i];
+    }
+    for( i=1; i<x; i++){
+        t+=a[i];
+    }
+    return t;
+}
+ 
+int main(){
+    int n; cin >> n;
+    int a[n];
+    int i;
+    for(i=1; i<=n; i++){
+        cin >> a[i];
+    }
+    int x, y; cin >> x >> y;
+    int temp;
+    if(x>y){
+        temp=x;x=y;y=temp;
+    }
+ 
+    // cout << x << " " << y << endl;
+    // cout << t1(a,n,x,y) << " " << t2(a,n,x,y) << endl;
+ 
+    if( t1(a,n,x,y) < t2(a,n,x,y) ) cout << t1(a,n,x,y);
+    else cout << t2(a,n,x,y);
+    return 0;
+}
