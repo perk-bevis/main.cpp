@@ -133,3 +133,32 @@ int main(){
     else cout << t2(a,n,x,y);
     return 0;
 }
+cách 4
+#include<stdio.h>
+#include<math.h>
+ 
+int main() {
+	int n, tong=0; 
+	cin>>n;
+	int a[n];
+
+	for (int i=0; i<n; i++) {
+		cin >> a[i];
+		tong+=a[i];
+	}
+	int x, y;
+	cin >> x>>y;
+	if (x>y) {
+		int tmp=x;
+		x=y;
+		y=tmp;
+	}
+	int dem=0;
+	for (int i=x-1; i<y-1; i++) {
+		dem+=a[i];
+		//printf("%d ", a[i]);
+	}
+	if (dem<(tong-dem))
+		cout << dem;
+	else cout << tong-dem;
+}
