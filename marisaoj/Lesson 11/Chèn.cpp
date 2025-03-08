@@ -24,3 +24,67 @@ int main()
         cout << endl;
     }
 }
+
+#include <bits/stdc++.h>
+using namespace std;
+
+const int nmax = 1e6 + 7;
+
+void chen(int a[], int b[], int &d, int vt, int x) {
+    a[vt] = x; //chèn x vào vị trí vt
+    // a[1] = 0
+    // a[5] = 5
+    // a[5] = 4
+    int i = 1, j = 1;
+    while (i <= d) {//duyệt từ 1 đến d
+        if (j != vt) { //nếu j k phải vt cần chèn
+            a[j] = b[i];//sao chép lại phần tử của b sang a
+            j++;//tăng i và j lên 1 đơn vị
+            i++;
+        } else {
+            j++;
+        }
+    }
+   // Duyệt vòng lặp while (i <= d)
+   //Lần 1: i = 1, j = 1, vt = 1 → Bỏ qua (j++)
+   //Lần 2: i = 1, j = 2 → a[2] = b[1] = 1
+   //Lần 3: i = 2, j = 3 → a[3] = b[2] = 2
+   //Lần 4: i = 3, j = 4 → a[4] = b[3] = 3
+
+    d = max(d + 1, vt);//cập nhật độ dài 
+}
+
+int main() {
+    int a[nmax], b[nmax];
+    // giá trị truy vấn q
+    // lưu giá trị hiện tại của mảng vào d
+    //n=3(số lượng phần tử mảng) q=3(số lượng truy vấn)
+    // d=3(độ dài mảng)
+    int n, q, d;
+
+    cin >> n >> q;
+    d = n;
+    //i = 1;1<=3 / a[1]=1 a[2] = 2 a[3] = 3
+    for (int i = 1; i <= n; i++) {
+        cin >> a[i];
+        b[i] = a[i];// b[1,2,3]
+    }
+    //while(3--)
+    while (q--) {
+        int vt, x;// vt là vị trí chèn của phần tử
+        // x là giá trị cần chèn vào mảng
+        cin >> vt >> x; 
+        //truy vấn 1(1 0)
+        //truy vấn 2(5 5)
+        //truy vấn 3(5 4)
+        chen(a, b, d, vt, x); 
+
+        for (int i = 1; i <= d; i++) {
+            cout << a[i] << ' ';
+            b[i] = a[i]; //sao chép lại phần tử của mảng a sang mảng b 
+        }
+        cout << '\n';
+    }
+    return 0;
+}
+
