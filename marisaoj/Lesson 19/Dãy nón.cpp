@@ -1,3 +1,5 @@
+//4
+//1 4 10 2
 #include <iostream>
 using namespace std;
  
