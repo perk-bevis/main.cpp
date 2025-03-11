@@ -24,3 +24,33 @@ int main (){
   cout << sum << endl;
   return 0;
 }
+
+#include <iostream>
+#include <vector>
+using namespace std;
+ 
+int main()
+{
+  int n, m, x, y;
+  cin >> n >> m >> x >> y;
+ 
+  vector<vector<int>> arr(n, vector<int>(m));
+  int target = arr[x - 1][y - 1];
+  for (int i = 0; i < n; ++i)
+  {
+    for (int j = 0; j < m; ++j)
+    {
+      cin >> arr[i][j];
+    }
+  }
+  int sum = 0;
+  for (int i = 0; i < n; ++i)
+  {
+    for (int j = 0; j < m; ++j)
+    {
+      if ((abs(i + 1 - x) == abs(j + 1 - y)))
+        sum = sum + arr[i][j];
+    }
+  }
+  cout << sum;
+}
