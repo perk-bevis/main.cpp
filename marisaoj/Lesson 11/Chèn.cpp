@@ -33,10 +33,16 @@ const int nmax = 1e6 + 7;
 void chen(int a[], int b[], int &d, int vt, int x) {
     a[vt] = x; //chèn x vào vị trí vt
     // a[1] = 0
+    //chèn gt 0 vào vt 1 mảng trở thành [0,2,3]
+    //d= max(3+1,1) =4
     // a[5] = 5
+    //chèn gt 5 vào vt 5 mảng trở thành [0,1,2,3,5]
+    //d= max(4+1,5) =5
     // a[5] = 4
+    //chèn gt 4 vào vt 5 mảng trở thành [0,1,2,3,4]
+    //d= max(5+1,5) =6
     int i = 1, j = 1;
-    while (i <= d) {//duyệt từ 1 đến d
+    while (i <= d) {//duyệt từ 1 đến 3
         if (j != vt) { //nếu j k phải vt cần chèn
             a[j] = b[i];//sao chép lại phần tử của b sang a
             j++;//tăng i và j lên 1 đơn vị
@@ -50,8 +56,25 @@ void chen(int a[], int b[], int &d, int vt, int x) {
    //Lần 2: i = 1, j = 2 → a[2] = b[1] = 1
    //Lần 3: i = 2, j = 3 → a[3] = b[2] = 2
    //Lần 4: i = 3, j = 4 → a[4] = b[3] = 3
-
-    d = max(d + 1, vt);//cập nhật độ dài 
+   //a[0,1,2,3]
+   
+   // truy vấn 2
+   //Lần 1: i = 1, j = 1 → a[1] = b[1] = 0
+   //Lần 2: i = 2, j = 2 → a[2] = b[2] = 1
+   //Lần 3: i = 3, j = 3 → a[3] = b[3] = 2
+   //Lần 4: i = 4, j = 4 → a[4] = b[4] = 3
+   //Lần 5: i = 5, j = 5 → Bỏ qua (j++)
+   //a = [0, 1, 2, 3, 5]
+   
+   //truy vấn 3
+   //Lần 1: i = 1, j = 1 → a[1] = b[1] = 0
+   //Lần 2: i = 2, j = 2 → a[2] = b[2] = 1
+   //Lần 3: i = 3, j = 3 → a[3] = b[3] = 2
+   //Lần 4: i = 4, j = 4 → a[4] = b[4] = 3
+   //Lần 5: i = 5, j = 5 → Bỏ qua (j++)
+   //Lần 6: i = 5, j = 6 → a[6] = b[5] = 5
+   //a=[0,1,2,3,4,5]
+   d = max(d + 1, vt);//cập nhật độ dài 
 }
 
 int main() {
@@ -87,4 +110,3 @@ int main() {
     }
     return 0;
 }
-
