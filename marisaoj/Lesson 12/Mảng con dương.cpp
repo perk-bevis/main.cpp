@@ -10,8 +10,8 @@ int main()
     for(int i=0;i<n;i++){
       cin>> a[i];
     }
-    int b =0;
-    int c=0;
+    int b = 0; // Lưu độ dài lớn nhất của dãy số dương liên tiếp
+    int c = 0; // Đếm độ dài hiện tại của dãy số dương liên tiếp
     for(int i=0;i<n;i++){
       if(a[i]> 0){
         c = c+1;
