@@ -1,7 +1,13 @@
 # main.cpp
 cd đến thư mụv
+
+
 clang -o main main.c -lcs50
+
+
 ./main
+
+
 // make main
 // ./main
 
