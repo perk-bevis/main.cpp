@@ -1,9 +1,9 @@
 #include <iostream>
-#include <unordered_map>
+#include <map>
 using namespace std;
 
 long long subarraySum(int nums[], int size, long long k) {
-    unordered_map<long long, int> prefix_sum_freq;
+    map<long long, int> prefix_sum_freq;
     prefix_sum_freq[0] = 1;
 
     long long current_sum = 0;
@@ -11,12 +11,7 @@ long long subarraySum(int nums[], int size, long long k) {
 
     for (int i = 0; i < size; ++i) {
         current_sum += nums[i];
-        long long target = current_sum - k;
-
-        if (prefix_sum_freq.count(target)) {
-            count += prefix_sum_freq[target];
-        }
-
+        count += prefix_sum_freq[current_sum - k];
         prefix_sum_freq[current_sum]++;
     }
 
