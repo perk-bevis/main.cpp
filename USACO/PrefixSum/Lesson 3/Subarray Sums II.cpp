@@ -2,14 +2,12 @@
 #include <unordered_map>
 using namespace std;
 
-int subarraySum(int nums[], int size, int k) {
-    if (nums == nullptr || size <= 0) return 0;
-
+long long subarraySum(int nums[], int size, long long k) {
     unordered_map<long long, int> prefix_sum_freq;
     prefix_sum_freq[0] = 1;
 
     long long current_sum = 0;
-    int count = 0;
+    long long count = 0;
 
     for (int i = 0; i < size; ++i) {
         current_sum += nums[i];
@@ -26,16 +24,20 @@ int subarraySum(int nums[], int size, int k) {
 }
 
 int main() {
-    int size, k;
-    cin >> size  >> k;
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
 
-    int nums[size];
+    int size;
+    long long k;
+    cin >> size >> k;
+
+    int* nums = new int[size];
     for (int i = 0; i < size; ++i) {
         cin >> nums[i];
     }
-    
-    int result = subarraySum(nums, size, k);
-    cout << result << endl;
 
+    cout << subarraySum(nums, size, k) << "\n";
+
+    delete[] nums;
     return 0;
 }
