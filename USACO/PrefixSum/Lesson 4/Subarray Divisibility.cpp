@@ -11,8 +11,9 @@ long long subarraySum(int nums[], int size) {
 
     for (int i = 0; i < size; ++i) {
         current_sum += nums[i];
-        count += prefix_sum_freq[current_sum % size];
-        prefix_sum_freq[current_sum]++;
+        long long mod = ((current_sum % size) + size) % size; // sửa ở đây
+        count += prefix_sum_freq[mod];
+        prefix_sum_freq[mod]++;
     }
 
     return count;
