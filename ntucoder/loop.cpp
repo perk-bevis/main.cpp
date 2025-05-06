@@ -25,7 +25,7 @@ int main() {
     for (int i = 0; i < N; i++) {
         fin >> a[i] >> b[i] >> g[i];
     }
-    for (int i = 0; i < 4; i++) {
+    for (int i = 1; i <= 3; i++) {
         highest = max(highest, solution(i));
     }
     fout << highest << endl;
