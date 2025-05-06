@@ -1,7 +1,7 @@
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <algorithm>
-#include <fstream>
 #define max_dong 100
 #define max_cot 100
 using namespace std;
