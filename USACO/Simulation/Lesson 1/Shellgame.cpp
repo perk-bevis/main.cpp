@@ -28,11 +28,11 @@ int main() {
     ofstream fout("shell.out");
     
     int n;
-    cin >> n;
+    fin >> n;
     int a[max_dong][max_cot];
     for(int i= 0;i<n;i++){
         for(int j=0;j<n;j++){
-            cin >> a[i][j];
+            fin >> a[i][j];
         }
     }
 
@@ -40,6 +40,6 @@ int main() {
     for (int i = 1; i <= n; i++) {
         res = max(res, hoanvi(a, n, i));
     }
-    cout << res << endl;
+    fout << res << endl;
     return 0;
 }
