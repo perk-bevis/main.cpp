@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <fstream>
 #define max_dong 100
 #define max_cot 100
 using namespace std;
@@ -23,6 +24,9 @@ int hoanvi(int a[max_dong][max_cot],int n,int start){
     return correct;
 }
 int main() {
+    ifstream fin("shell.in");
+    ofstream fout("shell.out");
+    
     int n;
     cin >> n;
     int a[max_dong][max_cot];
