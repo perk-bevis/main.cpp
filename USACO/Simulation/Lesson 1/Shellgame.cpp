@@ -1,44 +1,33 @@
 #include <iostream>
 #include <fstream>
-#include <vector>
-#include <algorithm>
-#define max_dong 100
 using namespace std;
-// ham hoan vi
-int hoanvi(int a[max_dong][3],int n,int start){
-    int pos = start;
-    int correct = 0;
 
-    for (int i = 0; i < n; i++) {
-        int x = a[i][0];
-        int y = a[i][1];
-        int guess = a[i][2];
-        
-        if (pos == x) pos = y;
-        else if (pos == y) pos = x;
-        
-        if (pos == guess) correct++;
-    }
+int N, A[100], B[100], G[100];
 
-    return correct;
+int num_correct(int starting_shell)
+{
+  int current_shell = starting_shell, correct = 0;
+  for (int i=0; i<N; i++) {
+    if (A[i] == current_shell) current_shell = B[i];
+    else if (B[i] == current_shell) current_shell = A[i];
+    if (current_shell == G[i]) correct++;
+  }
+  return correct;
 }
-int main() {
-    ifstream fin("shell.in");
-    ofstream fout("shell.out");
-    
-    int n;
-    fin >> n;
-    int a[max_dong][3];
-    for(int i= 0;i<n;i++){
-        for(int j=0;j<n;j++){
-            fin >> a[i][j];
-        }
-    }
 
-    int res = 0;
-    for (int i = 1; i <= 3; i++) {
-        res = max(res, hoanvi(a, n, i));
-    }
-    fout << res << endl;
-    return 0;
+int main(void)
+{
+  ifstream fin ("shell.in");
+  fin >> N;
+  for (int i=0; i<N; i++)
+    fin >> A[i] >> B[i] >> G[i];
+
+  int best = 0;
+  for (int i=1; i<=3; i++)
+    best = max(best, num_correct(i));
+
+  ofstream fout ("shell.out");
+  fout << best << "\n";
+  return 0;
 }
+
